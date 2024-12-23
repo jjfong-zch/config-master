@@ -2,22 +2,52 @@ import { useEffect, useCallback, useMemo } from "react";
 import { MenuLayout } from "../templates/MenuLayout";
 import { MenuSection } from "../organisms/MenuSection";
 import { Button } from "../atoms/Button";
-import { SideNavItem } from "../molecules/SideNavItem";
+import { Navbar } from "../organisms/Navbar";
+import { Sidebar } from "../organisms/Sidebar";
 import { MenuCategories } from "../organisms/MenuCategories";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import {
   initializeMenu,
   setActiveLanguage,
-  setActiveSection,
-  setActiveView,
   reorderItems,
   toggleHideItem,
   setReferenceLanguage,
   toggleFlag,
   toggleProvider,
 } from "../../store/menuSlice";
-import { MenuSection as MenuSectionType } from "../../types/menu";
-import { LanguageSelect } from "../molecules/LanguageSelect";
+import {
+  MenuSection as MenuSectionType,
+  WebMobileSection,
+  MobileSideMenu,
+  SectionType,
+} from "../../types/menu";
+import { RootState } from "../../store/store";
+
+type MenuData = {
+  [key: string]: {
+    [K in SectionType]: K extends "mobile-sidemenu"
+      ? MobileSideMenu
+      : WebMobileSection;
+  };
+};
+
+const isMobileSideMenu = (section: any): section is MobileSideMenu => {
+  return (
+    section &&
+    typeof section === "object" &&
+    "beforeLogin" in section &&
+    "afterLogin" in section
+  );
+};
+
+const isWebMobileSection = (section: any): section is WebMobileSection => {
+  return (
+    section &&
+    typeof section === "object" &&
+    "menu" in section &&
+    "submenu" in section
+  );
+};
 
 export const MenuConfigurationPage = ({ data }: { data: MenuSectionType }) => {
   const dispatch = useAppDispatch();
@@ -26,7 +56,7 @@ export const MenuConfigurationPage = ({ data }: { data: MenuSectionType }) => {
     activeLanguage,
     activeSection,
     activeView,
-  } = useAppSelector((state) => state.menu);
+  } = useAppSelector((state: RootState) => state.menu);
 
   useEffect(() => {
     dispatch(initializeMenu(data));
@@ -74,27 +104,12 @@ export const MenuConfigurationPage = ({ data }: { data: MenuSectionType }) => {
     [activeLanguage, dispatch, menuData]
   );
 
-  const languages = useMemo(() => Object.keys(menuData), [menuData]);
+  const languages = useMemo(() => Object.keys(menuData || {}), [menuData]);
 
   const handleToggleFlag = (
     category: string,
     flagName: "disableOverrideFromBaseMenu" | "disableBaseMenuHotNewProvider"
   ) => {
-    const updatedCategories = {
-      ...menuData[activeLanguage][activeSection].submenu,
-      [category]: {
-        ...(menuData[activeLanguage][activeSection].submenu[
-          category
-        ] as SubMenuConfig),
-        [flagName]: !(
-          menuData[activeLanguage][activeSection].submenu[
-            category
-          ] as SubMenuConfig
-        )[flagName],
-      },
-    };
-
-    // Update your state management here
     dispatch(toggleFlag({ category, flagName }));
   };
 
@@ -141,121 +156,46 @@ export const MenuConfigurationPage = ({ data }: { data: MenuSectionType }) => {
     </div>
   );
 
-  const SECTION_GROUPS = {
-    web: {
-      label: "Web",
-      types: {
-        main: "Main Menu",
-        submenu: "Sub Menus",
-      },
-    },
-    mobile: {
-      label: "Mobile",
-      types: {
-        main: "Main Menu",
-        submenu: "Sub Menus",
-      },
-    },
-    "mobile-sidemenu": {
-      label: "Mobile Sidemenu",
-      types: null, // No menu types for mobile-sidemenu
-    },
-    affiliate: {
-      label: "Affiliate",
-      types: {
-        main: "Main Menu",
-        submenu: "Sub Menus",
-      },
-    },
-  } as const;
-
-  const renderSidebar = () => (
-    <div className="h-full flex flex-col">
-      <div className="mb-6">
-        <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
-          Region & Language
-        </h3>
-        <LanguageSelect
-          languages={languages}
-          value={activeLanguage}
-          onChange={handleLanguageChange}
-        />
-      </div>
-
-      {/* Menu Sections */}
-      <div className="flex-1 overflow-hidden">
-        <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
-          Menu Sections
-        </h3>
-        <div className="space-y-4 overflow-y-auto pr-2 scrollbar-hide">
-          {Object.entries(SECTION_GROUPS).map(
-            ([sectionKey, { label, types }]) => (
-              <div key={sectionKey} className="space-y-1">
-                {/* Section Header */}
-                <div className="px-2 py-1">
-                  <span className="text-sm font-medium text-gray-900">
-                    {label}
-                  </span>
-                </div>
-
-                {/* Menu Types or Single Section */}
-                {types ? (
-                  // For sections with menu types
-                  Object.entries(types).map(([typeKey, typeLabel]) => (
-                    <SideNavItem
-                      key={`${sectionKey}-${typeKey}`}
-                      label={typeLabel}
-                      isActive={
-                        activeSection === sectionKey && activeView === typeKey
-                      }
-                      onClick={() => {
-                        dispatch(setActiveSection(sectionKey));
-                        dispatch(setActiveView(typeKey as "main" | "submenu"));
-                      }}
-                    />
-                  ))
-                ) : (
-                  // For sections without menu types (like mobile-sidemenu)
-                  <SideNavItem
-                    label="Menu Items"
-                    isActive={activeSection === sectionKey}
-                    onClick={() => dispatch(setActiveSection(sectionKey))}
-                  />
-                )}
-              </div>
-            )
-          )}
-        </div>
-      </div>
-    </div>
-  );
-
   const renderContent = () => {
-    if (activeSection === "mobile-sidemenu") {
+    const typedMenuData = menuData as MenuData;
+    if (!typedMenuData?.[activeLanguage]) {
+      return null;
+    }
+
+    const section = typedMenuData[activeLanguage][activeSection as SectionType];
+    if (!section) {
+      return null;
+    }
+
+    if (activeSection === "mobile-sidemenu" && isMobileSideMenu(section)) {
       return (
         <div className="space-y-8">
           <MenuSection
-            items={menuData[activeLanguage][activeSection].beforeLogin.ordering}
-            hideList={
-              menuData[activeLanguage][activeSection].beforeLogin.hideList
-            }
+            title="Before Login"
+            items={section.beforeLogin.ordering}
+            hideList={section.beforeLogin.hideList}
             onDragEnd={(oldIndex, newIndex) =>
               handleListReorder("beforeLogin", null, oldIndex, newIndex)
             }
             onToggleHide={(item) => handleToggleHide("beforeLogin", item)}
+            onToggleProvider={() => {}}
           />
           <MenuSection
-            items={menuData[activeLanguage][activeSection].afterLogin.ordering}
-            hideList={
-              menuData[activeLanguage][activeSection].afterLogin.hideList
-            }
+            title="After Login"
+            items={section.afterLogin.ordering}
+            hideList={section.afterLogin.hideList}
             onDragEnd={(oldIndex, newIndex) =>
               handleListReorder("afterLogin", null, oldIndex, newIndex)
             }
             onToggleHide={(item) => handleToggleHide("afterLogin", item)}
+            onToggleProvider={() => {}}
           />
         </div>
       );
+    }
+
+    if (!isWebMobileSection(section)) {
+      return null;
     }
 
     if (activeView === "main") {
@@ -263,12 +203,13 @@ export const MenuConfigurationPage = ({ data }: { data: MenuSectionType }) => {
         <div className="space-y-8 main">
           <MenuSection
             title="Main Menu"
-            items={menuData[activeLanguage][activeSection].menu.ordering}
-            hideList={menuData[activeLanguage][activeSection].menu.hideList}
+            items={section.menu.ordering}
+            hideList={section.menu.hideList}
             onDragEnd={(oldIndex, newIndex) =>
               handleListReorder("main-menu", null, oldIndex, newIndex)
             }
             onToggleHide={(item) => handleToggleHide(null, item)}
+            onToggleProvider={() => {}}
           />
         </div>
       );
@@ -279,7 +220,7 @@ export const MenuConfigurationPage = ({ data }: { data: MenuSectionType }) => {
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
           <h2 className="text-lg font-medium text-gray-900 mb-6">Sub Menus</h2>
           <MenuCategories
-            categories={menuData[activeLanguage][activeSection].submenu}
+            categories={section.submenu}
             onDragEnd={(category, oldIndex, newIndex) =>
               handleListReorder("submenu", category, oldIndex, newIndex)
             }
@@ -295,30 +236,32 @@ export const MenuConfigurationPage = ({ data }: { data: MenuSectionType }) => {
   };
 
   const getCurrentSectionItemCount = () => {
-    if (
-      !menuData ||
-      !menuData[activeLanguage] ||
-      !menuData[activeLanguage][activeSection]
-    ) {
+    const typedMenuData = menuData as MenuData;
+    if (!typedMenuData?.[activeLanguage]) {
       return 0;
     }
 
-    const currentSection = menuData[activeLanguage][activeSection];
+    const section = typedMenuData[activeLanguage][activeSection as SectionType];
+    if (!section) {
+      return 0;
+    }
 
-    if (activeSection === "mobile-sidemenu") {
+    if (activeSection === "mobile-sidemenu" && isMobileSideMenu(section)) {
       return (
-        currentSection.beforeLogin.ordering.length +
-        currentSection.afterLogin.ordering.length
+        section.beforeLogin.ordering.length + section.afterLogin.ordering.length
       );
     }
 
-    if (activeView === "main") {
-      return currentSection.menu.ordering.length;
+    if (!isWebMobileSection(section)) {
+      return 0;
     }
 
-    // For submenu view, sum up all submenu items
-    return Object.values(currentSection.submenu).reduce(
-      (total, submenu) => total + (submenu as SubMenuConfig).ordering.length,
+    if (activeView === "main") {
+      return section.menu.ordering.length;
+    }
+
+    return Object.values(section.submenu).reduce(
+      (total: number, submenu) => total + submenu.ordering.length,
       0
     );
   };
@@ -335,8 +278,13 @@ export const MenuConfigurationPage = ({ data }: { data: MenuSectionType }) => {
 
   return (
     <MenuLayout
-      header={renderHeader()}
-      sidebar={renderSidebar()}
+      header={<Navbar btnFn={handleSave} />}
+      sidebar={
+        <Sidebar
+          languages={languages}
+          onLanguageChange={handleLanguageChange}
+        />
+      }
       currentSection={{
         language: activeLanguage,
         section: activeSection,
