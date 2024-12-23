@@ -1,9 +1,9 @@
 import { LanguageSelect } from "../molecules/LanguageSelect";
 import { SideNavItem } from "../molecules/SideNavItem";
-// import { Dispatch } from "@reduxjs/toolkit";
 import { setActiveSection, setActiveView } from "../../store/menuSlice";
 import { useAppSelector, useAppDispatch } from "../../store/hooks";
 import { RootState } from "../../store/store";
+
 interface SideProps {
   languages: string[];
   onLanguageChange: (newLanguage: string) => void;
@@ -44,22 +44,14 @@ export const Sidebar = ({ languages, onLanguageChange }: SideProps) => {
   );
 
   return (
-    <div className="h-full flex flex-col">
-      <div className="mb-6">
-        <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
-          Region & Language
-        </h3>
-        <LanguageSelect
-          languages={languages}
-          value={activeLanguage}
-          onChange={onLanguageChange}
-        />
-      </div>
+    <div className="h-full flex flex-col space-y-6">
+      <LanguageSelect
+        languages={languages}
+        value={activeLanguage}
+        onChange={onLanguageChange}
+      />
 
       <div className="flex-1 overflow-hidden">
-        <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
-          Menu Sections
-        </h3>
         <div className="space-y-4 overflow-y-auto pr-2 scrollbar-hide">
           {Object.entries(SECTION_GROUPS).map(
             ([sectionKey, { label, types }]) => (

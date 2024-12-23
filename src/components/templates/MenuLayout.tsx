@@ -32,25 +32,23 @@ export const MenuLayout = ({
       <div className="flex-1 ml-64">
         <div className="max-w-5xl mx-auto px-6 py-8">
           <Card className="mb-8">
-            <div className="p-4 border-b border-gray-100">
+            <div className="p-4">
               <div className="flex items-center justify-between">
-                <div>
-                  <h2 className="text-sm font-medium text-gray-700">
-                    {currentSection.language} / {currentSection.section}
-                    {currentSection.view && ` / ${currentSection.view}`}
-                  </h2>
-                  <p className="text-xs text-gray-500 mt-1">
-                    {currentSection.itemCount} items in total
-                  </p>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="px-2 py-1 text-xs font-medium bg-blue-50 text-blue-700 rounded-full">
+                <div className="flex items-center gap-3">
+                  <span className="px-2.5 py-1.5 text-sm font-medium bg-blue-50 text-blue-700 rounded-md">
                     {currentSection.language}
                   </span>
-                  <span className="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-600 rounded-full">
+                  <span className="text-gray-400">/</span>
+                  <span className="text-sm font-medium text-gray-700">
                     {currentSection.section}
+                    {currentSection.view && ` / ${currentSection.view}`}
                   </span>
                 </div>
+                {currentSection.itemCount !== undefined && (
+                  <span className="text-sm text-gray-500">
+                    {currentSection.itemCount} items
+                  </span>
+                )}
               </div>
             </div>
           </Card>

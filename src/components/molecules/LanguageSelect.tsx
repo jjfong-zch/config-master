@@ -22,19 +22,9 @@ export const LanguageSelect = React.memo(
         >
           <Select.Value>
             {value === "ALL" ? (
-              <span className="flex flex-col">
-                <span className="font-medium">ALL Languages</span>
-                <span className="text-xs text-gray-500">
-                  Reference: {referenceLanguage}
-                </span>
-              </span>
+              <span className="font-medium">All Languages</span>
             ) : (
-              <span className="flex flex-col">
-                <span className="font-medium">{value.split("_")[0]}</span>
-                <span className="text-xs text-gray-500">
-                  {value.split("_")[1]}
-                </span>
-              </span>
+              <span className="font-medium">{value}</span>
             )}
           </Select.Value>
           <Select.Icon>
@@ -62,20 +52,11 @@ export const LanguageSelect = React.memo(
                   data-[state=checked]:bg-blue-50"
                 >
                   <Select.ItemText>
-                    <div className="flex flex-col">
-                      {lang === "ALL" ? (
-                        <span className="font-medium">ALL Languages</span>
-                      ) : (
-                        <>
-                          <span className="font-medium">
-                            {lang.split("_")[0]}
-                          </span>
-                          <span className="text-xs text-gray-500">
-                            {lang.split("_")[1]}
-                          </span>
-                        </>
-                      )}
-                    </div>
+                    {lang === "ALL" ? (
+                      <span className="font-medium">All Languages</span>
+                    ) : (
+                      <span className="font-medium">{lang}</span>
+                    )}
                   </Select.ItemText>
                 </Select.Item>
               ))}
