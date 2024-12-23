@@ -1,0 +1,1323 @@
+{
+  "web": {
+    "category": {
+      "Sportsbook": {
+        "content": {
+          "EN_TH": "Sport",
+          "TH_TH": "กีฬา"
+        },
+        "menuGlow": "menu-sports",
+        "isTitle": true,
+        "isNavigate": true,
+        "route": "/sports-landing",
+        "isImageMenu": true,
+        "imageMenu": "/public/html/images/home_img/navbar/Sports.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/Sports.gif",
+        "style": {
+          "height": "24px"
+        }
+      },
+      "ESportsbook": {
+        "menuGlow": "menu-esports",
+        "isTitle": true,
+        "content": {
+          "EN_TH": "E-Sport",
+          "TH_TH": "อี สปอร์ต"
+        },
+        "isNavigate": true,
+        "route": "/esports-landing",
+        "isImageMenu": true,
+        "imageMenu": "/public/html/images/home_img/navbar/esports.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/esports.gif",
+        "style": {
+          "height": "24px"
+        }
+      },
+      "Casino": {
+        "content": {
+          "EN_TH": "Casino",
+          "TH_TH": "คาสิโน"
+        },
+        "isNavigate": true,
+        "route": "/casino-landing",
+        "imageMenu": "/public/html/images/home_img/navbar/casino.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/casino.gif",
+        "style": {
+          "height": "24px"
+        }
+      },
+      "Slot": {
+        "menuGlow": "menu-slots",
+        "isTitle": true,
+        "content": {
+          "EN_TH": "Slot",
+          "TH_TH": "สล็อต"
+        },
+        "isNavigate": true,
+        "route": "/slots/nextspin",
+        "imageMenu": "/public/html/images/home_img/navbar/slots.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/Slots.gif",
+        "style": {
+          "height": "24px"
+        }
+      },
+      "Poker": {
+        "content": {
+          "EN_TH": "Poker",
+          "TH_TH": "โป๊กเกอร์"
+        },
+        "submenu": "P",
+        "isNavigate": true,
+        "route": "/poker-landing",
+        "imageMenu": "/public/html/images/home_img/navbar/poker.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/Poker.gif",
+        "style": {
+          "height": "24px"
+        }
+      },
+      "Fishing": {
+        "menuGlow": "menu-fishing",
+        "isTitle": true,
+        "content": {
+          "EN_TH": "Fishing",
+          "TH_TH": "ยิงปลา"
+        },
+        "isNavigate": true,
+        "route": "/fish",
+        "imageMenu": "/public/html/images/home_img/navbar/fishing.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/Fishing.gif",
+        "style": {
+          "height": "24px"
+        }
+      },
+      "LiveTV": {
+        "menuGlow": "menu-live-tv",
+        "content": {
+          "en": "Live TV",
+          "default": "global:global.menu.tv3"
+        },
+        "imageMenu": "/public/html/images/home_img/navbar/liveTV.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/liveTV.gif",
+        "style": {
+          "height": "24px"
+        }
+      },
+      "LiveScore": {
+        "menuGlow": "menu-live-score",
+        "content": {
+          "en": "Live Score",
+          "default": "global:global.menu.score3"
+        },
+        "imageMenu": "/public/html/images/home_img/navbar/livescore.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/livescore.gif",
+        "style": {
+          "height": "24px"
+        }
+      },
+      "VIP": {
+        "content": "global:global.menu.vip",
+        "imageMenu": "/public/html/images/home_img/navbar/VIP-shining.gif",
+        "style": {
+          "height": "38px"
+        },
+        "route": "/vip",
+        "targetBlank": false,
+        "bgColor": "linear-gradient(316deg, #FF5FDC 0%, #FF003D 100%), rgba(255, 255, 255, 0.05)"
+      },
+      "Lottery": {
+        "menuGlow": "menu-lottery",
+        "isTitle": true,
+        "content": {
+          "EN_TH": "Lotto",
+          "TH_TH": "หวย"
+        },
+        "isNavigate": true,
+        "route": "/lottery",
+        "imageMenu": "/public/html/images/home_img/navbar/lottery.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/lottery.gif",
+        "style": {
+          "height": "24px"
+        }
+      },
+      "Games": {
+        "menuGlow": "menu-3d-games",
+        "isNavigate": true,
+        "isTitle": true,
+        "route": "/games",
+        "imageMenu": "/public/html/images/home_img/navbar/3dgames.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/3dgames.gif",
+        "style": {
+          "height": "24px"
+        },
+        "content": {
+          "EN_TH": "3D Games",
+          "TH_TH": "เกมส์3มิติ"
+        }
+      },
+      "Promotions": {
+        "content": "global:global.menu.promotions",
+        "imageMenu": "/public/html/images/home_img/navbar/Promotion-coin-move.gif",
+        "style": {
+          "height": "38px"
+        },
+        "bgColor": "linear-gradient(316deg, #FF005C 0%, #A60028 100%), rgba(255, 255, 255, 0.05)"
+      },
+      "Cockfight": {
+        "content": {
+          "EN_TH": "Cockfight",
+          "TH_TH": "เไก่ชน"
+        },
+        "imageMenu": "/public/html/images/home_img/navbar/cockfight.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/Cockfight.gif",
+        "style": {
+          "height": "24px"
+        }
+      },
+      "LuckyWheel": {
+        "style": {
+          "height": "38px"
+        },
+        "bgColor": "linear-gradient(316deg, #B02FFF 0%, #4200FF 100%), rgba(255, 255, 255, 0.05)"
+      },
+      "ReferralMyAccount": {
+        "content": "global:menuItem.referral",
+        "imageMenu": "/public/html/images/home_img/navbar/Referral.gif",
+        "style": {
+          "height": "38px"
+        },
+        "isRequiredLogin": true,
+        "bgColor": "linear-gradient(315deg, #FFAF38 0%, #FF5C00 100%), rgba(255, 255, 255, 0.05)"
+      },
+      "Download": {
+        "style": {
+          "height": "38px"
+        },
+        "bgColor": "linear-gradient(316deg, #BC2FFF 0%, #001AFF 100%), rgba(255, 255, 255, 0.05)"
+      },
+      "DailyMission": {
+        "route": "/myaccount/mission-diary",
+        "content": {
+          "default": "global:global.sidebar.mission_dairy.heading",
+          "th": "ภารกิจวันนี้!"
+        },
+        "isRequiredLogin": true,
+        "style": {
+          "height": "38px"
+        },
+        "bgColor": "linear-gradient(136deg, #0019FF 0%, #00D1FF 100%), rgba(255, 255, 255, 0.05)"
+      },
+      "FastGames": {
+        "content": {
+          "EN_TH": "Hot Games",
+          "TH_TH": "เกมส์สุดฮิต!"
+        },
+        "imageMenu": "/public/html/images/home_img/navbar/fastgames.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/fastgames.gif",
+        "style": {
+          "height": "24px"
+        }
+      },
+      "Leaderboard": {
+        "imageMenu": "/public/html/images/home_img/navbar/leaderboard.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/leaderboard.gif"
+      }
+    },
+    "subCategory": {
+      "C": {
+        "SAGaming": {
+          "id": 1,
+          "isNavigate": false,
+          "isLaunchGame": true
+        },
+        "SexyBaccarat2": {
+          "id": 2,
+          "isNavigate": false,
+          "isLaunchGame": true
+        },
+        "AsiaGaming2": {
+          "id": 3,
+          "isNavigate": false,
+          "isLaunchGame": true
+        },
+        "Allbet": {
+          "id": 4,
+          "isNavigate": false,
+          "isLaunchGame": true
+        },
+        "BigGaming": {
+          "id": 5,
+          "content": "global:global.submenu.casino.bigGaming",
+          "isNavigate": false,
+          "isLaunchGame": true
+        },
+        "BBIN2": {
+          "id": 6
+        },
+        "DreamGaming": {
+          "id": 7,
+          "isNavigate": false,
+          "isLaunchGame": true
+        },
+        "Ezugi": {
+          "id": 8
+        },
+        "GamePlay": {
+          "id": 9,
+          "isNavigate": false,
+          "isLaunchGame": true
+        },
+        "MicroGamingPlus": {
+          "id": 10,
+          "isNavigate": false,
+          "isLaunchGame": true
+        },
+        "Playtech": {
+          "id": 11,
+          "isNavigate": false,
+          "isLaunchGame": true
+        },
+        "ViaCasino": {
+          "id": 12
+        },
+        "WCasino": {
+          "id": 13
+        },
+        "WE": {
+          "id": 14
+        },
+        "WMCasino": {
+          "id": 15,
+          "content": "global:global.submenu.casino.wmcasino",
+          "isNavigate": false,
+          "isLaunchGame": true
+        },
+        "YeebetGaming": {
+          "id": 16,
+          "isNavigate": false,
+          "isLaunchGame": true
+        },
+        "Evo": {
+          "id": "17",
+          "content": "global:global.submenu.casino.evo2",
+          "isNavigate": false,
+          "isLaunchGame": true
+        },
+        "PPLiveCasino": {
+          "id": 18,
+          "isNavigate": false,
+          "isLaunchGame": true
+        }
+      },
+      "S": {
+        "BTI": {
+          "id": 1
+        },
+        "CMD368": {
+          "id": 2
+        },
+        "MAXBET": {
+          "id": 3
+        },
+        "M9BET": {
+          "id": 4,
+          "isNavigate": false,
+          "isLaunchGame": true
+        },
+        "SBOBET": {
+          "id": 5,
+          "isNavigate": false,
+          "isLaunchGame": true
+        },
+        "BetRadar": {
+          "isLaunchGame": true
+        },
+        "UFA": {
+          "isNavigate": false,
+          "isLaunchGame": true
+        }
+      },
+      "ES": {
+        "IME": {
+          "isLaunchGame": true
+        },
+        "TFG": {
+          "isLaunchGame": true
+        }
+      },
+      "SL": {
+        "PGSlot": {
+          "id": 1
+        },
+        "PragmaticPlay": {
+          "id": 2
+        },
+        "NextSpin": {
+          "id": 3
+        },
+        "Joker": {
+          "id": 4
+        },
+        "Jili": {
+          "id": 5
+        },
+        "AsiaGaming2": {
+          "id": 6
+        },
+        "Habanero": {
+          "id": 7
+        },
+        "PT4": {
+          "id": 8
+        },
+        "SpadeGaming": {
+          "id": 9
+        },
+        "BBIN2": {
+          "id": 10
+        },
+        "MiniTed": {
+          "id": 11
+        },
+        "PlayNGo": {
+          "id": 12
+        },
+        "FunkyGames": {
+          "id": 13
+        },
+        "918Kiss2": {
+          "id": 14
+        },
+        "GamePlay": {
+          "id": 15
+        },
+        "GoldenBay": {
+          "id": 16
+        },
+        "Mega888": {
+          "id": 17
+        },
+        "NetEnt": {
+          "id": 18
+        },
+        "RedTiger": {
+          "id": 19,
+          "content": "home:home.mobilePage.submenu.redtiger"
+        },
+        "Askmeslot": {
+          "id": 20
+        },
+        "AdvantPlay": {
+          "id": 21
+        },
+        "CQ9": {
+          "id": 22
+        },
+        "Evoplay": {
+          "id": 23
+        },
+        "ExpanseStudios": {
+          "id": 24
+        },
+        "FaChai": {
+          "id": 25
+        },
+        "FastSpin": {
+          "id": 26
+        },
+        "JDBGaming": {
+          "id": 27
+        },
+        "PlayStar": {
+          "id": 28
+        },
+        "Pussy888": {
+          "id": 29
+        },
+        "Rich88": {
+          "id": 30
+        },
+        "RelaxGaming": {
+          "id": 31
+        },
+        "RoyalSlotGaming": {
+          "id": 32
+        },
+        "Spinix": {
+          "id": 33
+        },
+        "Skywind": {
+          "id": 34
+        },
+        "V-Power": {
+          "id": 35
+        },
+        "YGGDrasil": {
+          "id": 36
+        },
+        "YesGetRich": {
+          "id": 37
+        },
+        "MicroGamingPlus": {
+          "id": 38
+        },
+        "TTG": {
+          "content": "global:global.submenu.slots.ttg2"
+        }
+      },
+      "F": {
+        "Askmeslot": {
+          "id": 1
+        },
+        "CQ9": {
+          "id": 2
+        },
+        "FaChai": {
+          "id": 3
+        },
+        "FastSpin": {
+          "id": 4
+        },
+        "JDBGaming": {
+          "id": 5
+        },
+        "Rich88": {
+          "id": 6
+        },
+        "RoyalSlotGaming": {
+          "id": 7,
+          "route": "/fish/royalslotgaming"
+        },
+        "SpadeGaming": {
+          "id": 8
+        },
+        "Spinix": {
+          "id": 9
+        },
+        "V-Power": {
+          "id": 10
+        },
+        "YesGetRich": {
+          "id": 11
+        },
+        "JILI": {
+          "id": 12,
+          "route": "/fish/jili",
+          "img": "/public/html/images/drawer_img/fishing-jili.png"
+        },
+        "MiniTed": {
+          "id": 13,
+          "route": "/fish/minited"
+        },
+        "Joker": {
+          "id": 14,
+          "route": "/fish/joker"
+        }
+      },
+      "L": {
+        "EdayLotto": {
+          "id": 1
+        },
+        "FunkyGames": {
+          "id": 2
+        },
+        "GamePlayLottery": {
+          "id": 3
+        },
+        "QQKenoLottery": {
+          "id": 4,
+          "route": "/lottery/qqkeno"
+        },
+        "TCAseanGaming": {
+          "id": 5
+        },
+        "QQKenoThaiLottery": {
+          "route": "/lottery/qqkeno-thai"
+        },
+        "CmdLottery": {},
+        "T7": {}
+      },
+      "P": {
+        "Poker": {
+          "isLaunchGame": true
+        },
+        "T7": {
+          "isLaunchGame": true
+        },
+        "JILI": {
+          "isLaunchGame": true
+        }
+      },
+      "CF": {
+        "Digmaan": {
+          "isLaunchGame": true
+        }
+      }
+    }
+  },
+  "mobile": {
+    "category": {
+      "Sports": {
+        "content": {
+          "EN_TH": "Sport",
+          "TH_TH": "กีฬา"
+        },
+        "svgName": "sport",
+        "menuGlow": "menu-sports",
+        "isImageMenuWithTitle": true,
+        "isImageMenu": true,
+        "path": "/public/html/images/home_img/navbar/Sports.png",
+        "pathOn": "/public/html/images/home_img/navbar/Sports.png"
+      },
+      "Casino": {
+        "content": {
+          "EN_TH": "Casino",
+          "TH_TH": "คาสิโน"
+        },
+        "svgName": "casino",
+        "menuGlow": "menu-casino",
+        "isImageMenuWithTitle": true,
+        "isImageMenu": true,
+        "path": "/public/html/images/home_img/navbar/casino.png",
+        "pathOn": "/public/html/images/home_img/navbar/casino.png"
+      },
+      "Slots": {
+        "content": {
+          "EN_TH": "Slot",
+          "TH_TH": "สล็อต"
+        },
+        "svgName": "slot",
+        "menuGlow": "menu-slots",
+        "isImageMenuWithTitle": true,
+        "isImageMenu": true,
+        "path": "/public/html/images/home_img/navbar/slots.png",
+        "pathOn": "/public/html/images/home_img/navbar/Slots.png"
+      },
+      "Fishing": {
+        "content": {
+          "EN_TH": "Fishing",
+          "TH_TH": "ยิงปลา"
+        },
+        "svgName": "fishing",
+        "menuGlow": "menu-fishing",
+        "isImageMenuWithTitle": true,
+        "isImageMenu": true,
+        "path": "/public/html/images/home_img/navbar/fishing.png",
+        "pathOn": "/public/html/images/home_img/navbar/Fishing.png"
+      },
+      "Poker": {
+        "content": {
+          "EN_TH": "Poker",
+          "TH_TH": "โป๊กเกอร์"
+        },
+        "submenu": "P",
+        "svgName": "poker",
+        "menuGlow": "menu-poker",
+        "isImageMenuWithTitle": true,
+        "route": "/poker/idn",
+        "isImageMenu": true,
+        "path": "/public/html/images/home_img/navbar/poker.png",
+        "pathOn": "/public/html/images/home_img/navbar/Poker.png"
+      },
+      "Lottery": {
+        "content": {
+          "EN_TH": "Lotto",
+          "TH_TH": "หวย"
+        },
+        "svgName": "lottery",
+        "menuGlow": "menu-lottery",
+        "isImageMenuWithTitle": true,
+        "isImageMenu": true,
+        "path": "/public/html/images/home_img/navbar/lottery.png",
+        "pathOn": "/public/html/images/home_img/navbar/lottery.png"
+      },
+      "ESportsbook": {
+        "content": {
+          "EN_TH": "E-Sport",
+          "TH_TH": "อี สปอร์ต"
+        },
+        "svgName": "e-sport",
+        "menuGlow": "menu-esports",
+        "isImageMenuWithTitle": true,
+        "isImageMenu": true,
+        "path": "/public/html/images/home_img/navbar/esports.png",
+        "pathOn": "/public/html/images/home_img/navbar/esports.png"
+      },
+      "LiveScore": {
+        "content": "global:global.menu.score3",
+        "svgName": "livescore",
+        "menuGlow": "menu-live-score",
+        "isImageMenuWithTitle": true,
+        "isImageMenu": true,
+        "path": "/public/html/images/home_img/navbar/livescore.gif",
+        "pathOn": "/public/html/images/home_img/navbar/livescore.gif"
+      },
+      "LiveTV": {
+        "svgName": "liveTV",
+        "content": {
+          "en": "Live TV",
+          "default": "global:global.menu.tv3"
+        },
+        "menuGlow": "menu-live-tv",
+        "isImageMenuWithTitle": true,
+        "isImageMenu": true,
+        "path": "/public/html/images/home_img/navbar/liveTV.png",
+        "pathOn": "/public/html/images/home_img/navbar/liveTV.png"
+      },
+      "Vip": {
+        "svgName": "vip3",
+        "menuGlow": "menu-vip",
+        "isImageMenuWithTitle": true,
+        "isImageMenu": true,
+        "path": "/public/html/images/drawer_img/menu-vip.png",
+        "pathOn": "/public/html/images/home_img/navbar/VIP-shining.gif"
+      },
+      "Racing": {
+        "svgName": "racing2",
+        "content": "global:global.menu.racing2"
+      },
+      "Games": {
+        "content": {
+          "EN_TH": "3D Games",
+          "TH_TH": "เกมส์3มิติ"
+        },
+        "isImageMenu": true,
+        "isImageMenuWithTitle": true,
+        "menuGlow": "menu-3d-games",
+        "path": "/public/html/images/home_img/navbar/3dgames.png",
+        "pathOn": "/public/html/images/home_img/navbar/3dgames.png"
+      },
+      "Cockfight": {
+        "content": {
+          "EN_TH": "Cockfight",
+          "TH_TH": "ไก่ชน"
+        },
+        "isImageMenu": true,
+        "menuGlow": "menu-cockfight",
+        "isImageMenuWithTitle": true,
+        "path": "/public/html/images/home_img/navbar/cockfight.png",
+        "pathOn": "/public/html/images/home_img/navbar/Cockfight.png"
+      },
+      "FastGames": {
+        "content": {
+          "EN_TH": "Hot Games",
+          "TH_TH": "เกมส์สุดฮิต!"
+        },
+        "isImageMenu": true,
+        "menuGlow": "menu-fastgames",
+        "isImageMenuWithTitle": true,
+        "path": "/public/html/images/home_img/navbar/fastgames.png",
+        "pathOn": "/public/html/images/home_img/navbar/fastgames.png"
+      }
+    },
+    "subCategory": {
+      "S": {
+        "BTI": {
+          "id": 1
+        },
+        "CMD368": {
+          "id": 2
+        },
+        "IBC": {
+          "id": 4
+        },
+        "SBO2": {
+          "id": 5
+        },
+        "M8": {
+          "id": 4
+        }
+      },
+      "G": {
+        "MiniTed": {
+          "id": 1
+        }
+      },
+      "L": {
+        "FunkyGames": {
+          "id": 3
+        },
+        "GamePlay Lottery": {
+          "id": 4
+        },
+        "Win Win Lottery": {
+          "id": 6
+        },
+        "QQKeno Lottery": {
+          "id": 5,
+          "route": "/lottery/qqkeno",
+          "isLaunchGame": false
+        },
+        "QQKenoThai Lottery": {
+          "route": "/lottery/qqkeno-thai",
+          "isLaunchGame": false
+        },
+        "CmdLottery": {
+          "route": "/lottery/cmdlottery",
+          "isLaunchGame": false
+        }
+      },
+      "P": {
+        "Poker": {
+          "route": "/poker/idn",
+          "imgPathPng": "/public/html/images/drawer_img/poker-idn.png"
+        },
+        "T7": {
+          "route": "/poker/t7",
+          "imgPathPng": "/public/html/images/drawer_img/poker-t7.png"
+        },
+        "JILI": {
+          "route": "/poker/jili",
+          "imgPathPng": "/public/html/images/home_img/poker-jili.png"
+        }
+      },
+      "SL": {
+        "PGSlot": {
+          "id": 1
+        },
+        "PragmaticPlay": {
+          "id": 2
+        },
+        "NextSpin": {
+          "id": 3
+        },
+        "Jili": {
+          "id": 4
+        },
+        "Joker": {
+          "id": 5
+        },
+        "Habanero": {
+          "id": 7
+        },
+        "PT4": {
+          "id": 8
+        },
+        "SpadeGaming": {
+          "id": 9
+        },
+        "BBIN2": {
+          "id": 10
+        },
+        "MiniTed": {
+          "id": 11
+        },
+        "PlayNGo": {
+          "id": 12
+        },
+        "FunkyGames": {
+          "id": 13
+        },
+        "Fachai": {
+          "id": 28
+        },
+        "AsiaGaming2": {
+          "id": 6
+        },
+        "918Kiss2": {
+          "id": 14
+        },
+        "GamePlay": {
+          "id": 15
+        },
+        "HCSlot": {
+          "id": 16
+        },
+        "NetEnt": {
+          "id": 17
+        },
+        "RedTiger": {
+          "id": 18,
+          "content": "home:home.mobilePage.submenu.redtiger"
+        },
+        "Askmeslot": {
+          "id": 19
+        },
+        "AdvantPlay": {
+          "id": 20
+        },
+        "CQ9": {
+          "id": 21
+        },
+        "Evoplay": {
+          "id": 22
+        },
+        "ExpanseStudios": {
+          "id": 23
+        },
+        "FaChai": {
+          "id": 24
+        },
+        "FastSpin": {
+          "id": 25
+        },
+        "JDBGaming": {
+          "id": 26
+        },
+        "PlayStar": {
+          "id": 27
+        },
+        "RelaxGaming": {
+          "id": 28
+        },
+        "RoyalSlotGaming": {
+          "id": 29
+        },
+        "Skywind": {
+          "id": 30
+        },
+        "V-Power": {
+          "id": 31
+        },
+        "YGGDrasil": {
+          "id": 32
+        },
+        "YesGetRich": {
+          "id": 33
+        },
+        "MicroGamingPlus": {
+          "id": 34
+        },
+        "TTG": {
+          "content": "global:global.submenu.slots.ttg2"
+        }
+      },
+      "C": {
+        "SAGaming": {
+          "id": 1
+        },
+        "SexyBaccarat2": {
+          "id": 2
+        },
+        "AsiaGaming2": {
+          "id": 3
+        },
+        "Allbet2": {
+          "id": 4
+        },
+        "BigGaming": {
+          "id": 5,
+          "content": "global:global.submenu.casino.bigGaming"
+        },
+        "BBIN2": {
+          "id": 6
+        },
+        "DreamGaming": {
+          "id": 7
+        },
+        "Ezugi": {
+          "id": 8
+        },
+        "GamePlay": {
+          "id": 9
+        },
+        "MicroGamingPlus": {
+          "id": 10
+        },
+        "PTL4": {
+          "id": 11
+        },
+        "ViaCasino": {
+          "id": 12
+        },
+        "WCasino": {
+          "id": 13
+        },
+        "WE": {
+          "id": 14
+        },
+        "YBL": {
+          "id": 16
+        },
+        "PPLiveCasino": {
+          "id": 17
+        },
+        "BTI": {
+          "id": 1
+        },
+        "CMD368": {
+          "id": 2
+        },
+        "IBC": {
+          "id": 3
+        },
+        "M8": {
+          "id": 4
+        },
+        "WMCasino": {
+          "id": 15,
+          "content": "global:global.submenu.casino.wmcasino"
+        },
+        "Evo": {
+          "id": "1.1",
+          "content": "global:global.submenu.casino.evo2"
+        }
+      },
+      "F": {
+        "CQ9": {
+          "id": 2
+        },
+        "FaChai": {
+          "id": 3
+        },
+        "FastSpin": {
+          "id": 4
+        },
+        "JDBGaming": {
+          "id": 5
+        },
+        "Rich88": {
+          "id": 6
+        },
+        "RoyalSlotGaming": {
+          "id": 7
+        },
+        "SpadeGaming": {
+          "id": 8
+        },
+        "V-Power": {
+          "id": 9
+        },
+        "YesGetRich": {
+          "id": 10
+        },
+        "JiLi": {
+          "id": 11
+        },
+        "MiniTed": {
+          "id": 12
+        },
+        "PlayStar": {
+          "img": "/public/html/default_whitelabel/template/images/submenu-icon/ss2-5/F-PS.png",
+          "imgPath": "/public/html/default_whitelabel/template/images/submenu-icon/ss2-5/F-PS.png",
+          "imgPathPng": "/public/html/default_whitelabel/template/images/submenu-icon/ss2-5/F-PS.png"
+        }
+      },
+      "FG": {
+        "Spribe": {
+          "id": 3
+        },
+        "T1Games": {
+          "id": 1
+        },
+        "Jili": {
+          "id": 2,
+          "imgPathPng": "/public/html/images/home_img/home_cat_fastgames_jili.png"
+        }
+      }
+    }
+  },
+  "mobile-sidemenu": {
+    "beforeLogin": {
+      "Home": {
+        "translation": "global:global.sidebar.home.heading2",
+        "imageMenu": "/public/html/images/home_img/navbar/home.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/home.png",
+        "content": "global:global.sidebar.home.heading2"
+      },
+      "Promotion": {
+        "style": {
+          "height": "38px"
+        },
+        "bgColor": "linear-gradient(316deg, #FF005C 0%, #A60028 100%), rgba(255, 255, 255, 0.05)"
+      },
+      "Contact": {
+        "translation": "global:global.sidebar.contact-us.heading2"
+      },
+      "Language": {
+        "translation": "global:global.sidebar.language.heading2",
+        "svgname": "drlanguage"
+      },
+      "Vip": {
+        "style": {
+          "height": "38px"
+        },
+        "route": "/vip",
+        "targetBlank": false,
+        "bgColor": "linear-gradient(316deg, #FF5FDC 0%, #FF003D 100%), rgba(255, 255, 255, 0.05)"
+      },
+      "Lucky Wheel": {
+        "style": {
+          "height": "38px"
+        },
+        "bgColor": "linear-gradient(316deg, #B02FFF 0%, #4200FF 100%), rgba(255, 255, 255, 0.05)"
+      },
+      "Slot": {
+        "content": {
+          "EN_TH": "Slot",
+          "TH_TH": "สล็อต"
+        }
+      },
+      "Download": {
+        "style": {
+          "height": "38px"
+        },
+        "bgColor": "linear-gradient(316deg, #BC2FFF 0%, #001AFF 100%), rgba(255, 255, 255, 0.05)"
+      },
+      "Daily Mission": {
+        "content": {
+          "default": "global:global.sidebar.mission_dairy.heading",
+          "th": "ภารกิจวันนี้!"
+        },
+        "style": {
+          "height": "38px"
+        },
+        "bgColor": "linear-gradient(136deg, #0019FF 0%, #00D1FF 100%), rgba(255, 255, 255, 0.05)"
+      },
+      "ReferralMyAccount": {
+        "style": {
+          "height": "38px"
+        },
+        "bgColor": "linear-gradient(315deg, #FFAF38 0%, #FF5C00 100%), rgba(255, 255, 255, 0.05)"
+      },
+      "Games": {
+        "content": {
+          "EN_TH": "3D Games",
+          "TH_TH": "เกมส์3มิติ"
+        }
+      },
+      "Settings": {
+        "group": "contact",
+        "content": {
+          "default": "Settings"
+        },
+        "route": "/settings",
+        "imageMenu": "/public/html/images/home_img/navbar/settings.png"
+      },
+      "LiveTV": {
+        "content": {
+          "en": "Live TV",
+          "default": "global:global.menu.tv3"
+        }
+      },
+      "FastGames": {
+        "content": {
+          "EN_TH": "Hot Games",
+          "TH_TH": "เกมส์สุดฮิต!"
+        }
+      },
+      "LiveScore": {
+        "content": {
+          "en": "Live Score",
+          "default": "global:global.menu.score3"
+        }
+      },
+      "Leaderboard": {
+        "imageMenu": "/public/html/images/home_img/navbar/leaderboard.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/leaderboard.gif"
+      }
+    },
+    "afterLogin": {
+      "Home": {
+        "translation": "global:global.sidebar.home.heading2",
+        "imageMenu": "/public/html/images/home_img/navbar/home.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/home.png",
+        "content": "global:global.sidebar.home.heading2"
+      },
+      "Funds": {
+        "translation": "global:global.sidebar.funds.heading2",
+        "svgname": "funds"
+      },
+      "My Account": {
+        "translation": "global:global.sidebar.account.heading2",
+        "svgname": "account"
+      },
+      "Language": {
+        "translation": "global:global.sidebar.language.heading2",
+        "svgname": "drlanguage"
+      },
+      "Desktop": {
+        "content": "global:global.sidebar.desktop.heading2",
+        "svgname": "drdesktop",
+        "imageMenu": "/public/html/images/home_img/navbar/desktop.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/desktop.png",
+        "action": "webview"
+      },
+      "Logout": {
+        "translation": "global:global.sidebar.logout.heading2",
+        "svgname": "drlogout",
+        "action": "logout"
+      },
+      "affiliate": {
+        "svgname": "affiliate",
+        "translation": "global:global.sidebar.affiliate.heading2",
+        "content": "global:global.sidebar.affiliate.heading2",
+        "imageMenu": "/public/html/images/home_img/navbar/affiliate.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/affiliate.png",
+        "action": "affiliate"
+      },
+      "About Us": {
+        "content": "global:global.sidebar.about-us.heading2",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/aboutus.png",
+        "action": "popup.page",
+        "popupKey": "about-us"
+      },
+      "Slot": {
+        "imageMenu": "/public/html/images/home_img/navbar/slots.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/slots.png",
+        "content": {
+          "EN_TH": "Slot",
+          "TH_TH": "สล็อต"
+        }
+      },
+      "Lottery": {
+        "imageMenu": "/public/html/images/home_img/navbar/lottery.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/lottery.png",
+        "content": {
+          "EN_TH": "Lotto",
+          "TH_TH": "หวย"
+        }
+      },
+      "Games": {
+        "imageMenu": "/public/html/images/home_img/navbar/3dgames.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/3dgames.png",
+        "content": {
+          "EN_TH": "3D Games",
+          "TH_TH": "เกมส์3มิติ"
+        }
+      },
+      "Fishing": {
+        "imageMenu": "/public/html/images/home_img/navbar/fishing.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/fishing.png",
+        "content": {
+          "EN_TH": "Fishing",
+          "TH_TH": "ยิงปลา"
+        }
+      },
+      "Promotion": {
+        "style": {
+          "height": "38px"
+        },
+        "bgColor": "linear-gradient(316deg, #FF005C 0%, #A60028 100%), rgba(255, 255, 255, 0.05)"
+      },
+      "Vip": {
+        "style": {
+          "height": "38px"
+        },
+        "targetBlank": false,
+        "route": "/vip",
+        "bgColor": "linear-gradient(316deg, #FF5FDC 0%, #FF003D 100%), rgba(255, 255, 255, 0.05)"
+      },
+      "Lucky Wheel": {
+        "style": {
+          "height": "38px"
+        },
+        "bgColor": "linear-gradient(316deg, #B02FFF 0%, #4200FF 100%), rgba(255, 255, 255, 0.05)"
+      },
+      "Download": {
+        "style": {
+          "height": "38px"
+        },
+        "bgColor": "linear-gradient(316deg, #BC2FFF 0%, #001AFF 100%), rgba(255, 255, 255, 0.05)"
+      },
+      "Daily Mission": {
+        "content": {
+          "default": "global:global.sidebar.mission_dairy.heading",
+          "th": "ภารกิจวันนี้!"
+        },
+        "style": {
+          "height": "38px"
+        },
+        "bgColor": "linear-gradient(136deg, #0019FF 0%, #00D1FF 100%), rgba(255, 255, 255, 0.05)"
+      },
+      "ReferralMyAccount": {
+        "style": {
+          "height": "38px"
+        },
+        "bgColor": "linear-gradient(315deg, #FFAF38 0%, #FF5C00 100%), rgba(255, 255, 255, 0.05)"
+      },
+      "Settings": {
+        "group": "contact",
+        "content": "Settings",
+        "route": "/settings",
+        "imageMenu": "/public/html/images/home_img/navbar/settings.png"
+      },
+      "LiveTV": {
+        "content": {
+          "en": "Live TV",
+          "default": "global:global.menu.tv3"
+        }
+      },
+      "FastGames": {
+        "content": {
+          "EN_TH": "Hot Games",
+          "TH_TH": "เกมส์สุดฮิต!"
+        }
+      },
+      "LiveScore": {
+        "content": {
+          "en": "Live Score",
+          "default": "global:global.menu.score3"
+        }
+      },
+      "Leaderboard": {
+        "imageMenu": "/public/html/images/home_img/navbar/leaderboard.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/leaderboard.gif"
+      }
+    }
+  },
+  "affiliate": {
+    "category": {
+      "Home": {
+        "id": 1,
+        "content": "global.menu.home2",
+        "disableDefaultImageMenu": true,
+        "isImageMenu": false,
+        "isCustomSvgMenu": true,
+        "CustomSvgMenu": "ss2-home",
+        "imageMenu": "/public/html/images/home_img/navbar/home.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/home.png"
+      },
+      "Commission Plans": {
+        "id": 6,
+        "content": "global.menu.commission-plans2",
+        "route": "/commission-plans",
+        "imageMenu": "/public/html/images/home_img/navbar/commissionPlan.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/commissionPlan.gif"
+      },
+      "FAQ": {
+        "id": 7,
+        "imageMenu": "/public/html/images/home_img/navbar/faq.png",
+        "route": "/faq",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/faq.gif"
+      },
+      "Contact": {
+        "id": 8,
+        "content": "footer.contact-us",
+        "route": "/contact-us",
+        "imageMenu": "/public/html/images/home_img/navbar/contactus.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/Contact-us.gif"
+      },
+      "Overview": {
+        "id": 2,
+        "content": "home:home.mobile.overview",
+        "route": "/overview",
+        "imageMenu": "/public/html/images/home_img/navbar/overview.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/overview.gif"
+      },
+      "Gallery": {
+        "id": 5,
+        "content": "home:home.mobile.gallery",
+        "route": "/gallery",
+        "imageMenu": "/public/html/images/home_img/navbar/gallery.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/gallery.gif"
+      },
+      "Report": {
+        "id": 3,
+        "content": "global.breadcums.reports",
+        "route": {
+          "web": "/myaccount/report",
+          "mobile": "/report"
+        },
+        "imageMenu": "/public/html/images/home_img/navbar/report.png",
+        "hoverImageSrc": "/public/html/images/home_img/navbar/report.gif"
+      },
+      "Campaign": {
+        "id": 4,
+        "route": {
+          "web": "/myaccount/campaign",
+          "mobile": "/campaign"
+        }
+      }
+    }
+  }
+}

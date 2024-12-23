@@ -1,0 +1,804 @@
+{
+  "EN_TH": {
+    "web": {
+      "menu": {
+        "hideList": ["Mega888", "918Kiss", "AffiliateNav"],
+        "ordering": [
+          "Home",
+          "Mobile",
+          "Slot",
+          "Fishing",
+          "Lottery",
+          "Sportsbook",
+          "Casino",
+          "ESportsbook",
+          "Cockfight",
+          "Poker",
+          "Games",
+          "FastGames",
+          "LiveScore",
+          "LiveTV",
+          "Leaderboard",
+          "DailyMission",
+          "LuckyWheel",
+          "ReferralMyAccount",
+          "VIP",
+          "Promotions",
+          "Download",
+          "ContactUs",
+          "LanguageSwitcher"
+        ]
+      },
+      "submenu": {
+        "SL": {
+          "hideList": [],
+          "ordering": [
+            "FunkyGames",
+            "HCSlot",
+            "JiLi",
+            "MicroGamingPlus",
+            "MiniTed",
+            "NetEnt",
+            "PGSlot",
+            "PlayNGo",
+            "RedTiger",
+            "AdvantPlay",
+            "AsiaGaming2",
+            "CQ9",
+            "GamePlay",
+            "Habanero",
+            "FaChai",
+            "JDBGaming",
+            "PlayStar",
+            "PT4",
+            "PragmaticPlay",
+            "RoyalSlotGaming",
+            "RelaxGaming",
+            "SpadeGaming",
+            "YesGetRich",
+            "YGGDrasil",
+            "NextSpin",
+            "BBIN2",
+            "DragoonSoft",
+            "Evoplay",
+            "ExpanseStudios",
+            "V-Power",
+            "FastSpin",
+            "Skywind",
+            "Askmeslot",
+            "Joker",
+            "DRG"
+          ],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "C": {
+          "hideList": [],
+          "ordering": [
+            "DreamGaming",
+            "EVO",
+            "SexyBaccarat2",
+            "Allbet2",
+            "AsiaGaming2",
+            "BigGaming",
+            "GamePlay",
+            "PTL4",
+            "PPLiveCasino",
+            "MicroGamingPlus",
+            "SAGaming",
+            "WMCasino",
+            "WCasino",
+            "BBIN2",
+            "WE",
+            "YBL",
+            "ViaCasino",
+            "Ezugi"
+          ],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "S": {
+          "hideList": [],
+          "ordering": ["BTI", "CMD368", "M8", "IBC", "SBO2"],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "ES": {
+          "hideList": [],
+          "ordering": ["IME", "TFG"],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "F": {
+          "hideList": [],
+          "ordering": [
+            "JiLi",
+            "MiniTed",
+            "NextSpin",
+            "SpadeGaming",
+            "CQ9",
+            "FaChai",
+            "JDBGaming",
+            "PlayStar",
+            "RoyalSlotGaming",
+            "YesGetRich",
+            "DragoonSoft",
+            "V-Power",
+            "FastSpin",
+            "Rich88"
+          ],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "L": {
+          "hideList": [],
+          "ordering": [
+            "FunkyGames",
+            "GamePlay Lottery",
+            "QQKeno Lottery",
+            "TC Gaming",
+            "Win Win Lottery",
+            "EdayLotto"
+          ],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "G": {
+          "hideList": [],
+          "ordering": ["GamePlay", "V8Poker", "MiniTed"],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "CF": {
+          "hideList": [],
+          "ordering": ["Digmaan", "WS168"],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "P": {
+          "hideList": [],
+          "ordering": ["JiLi"]
+        },
+        "FG": {
+          "hideList": [],
+          "ordering": ["Spribe", "T1Games", "Jili"]
+        }
+      }
+    },
+    "mobile": {
+      "menu": {
+        "hideList": ["918Kiss", "Mega888"],
+        "ordering": [
+          "Slots",
+          "Fishing",
+          "Lottery",
+          "Sports",
+          "Casino",
+          "ESportsbook",
+          "Cockfight",
+          "Poker",
+          "Games",
+          "FastGames",
+          "LiveTV"
+        ]
+      },
+      "submenu": {
+        "SL": {
+          "hideList": [],
+          "ordering": [
+            "FunkyGames",
+            "HCSlot",
+            "JiLi",
+            "MicroGamingPlus",
+            "MiniTed",
+            "NetEnt",
+            "PGSlot",
+            "PlayNGo",
+            "RedTiger",
+            "AdvantPlay",
+            "AsiaGaming2",
+            "CQ9",
+            "GamePlay",
+            "Habanero",
+            "FaChai",
+            "JDBGaming",
+            "PlayStar",
+            "PT4",
+            "PragmaticPlay",
+            "RoyalSlotGaming",
+            "RelaxGaming",
+            "SpadeGaming",
+            "YesGetRich",
+            "YGGDrasil",
+            "NextSpin",
+            "BBIN2",
+            "DragoonSoft",
+            "Evoplay",
+            "ExpanseStudios",
+            "V-Power",
+            "FastSpin",
+            "Skywind",
+            "Askmeslot",
+            "Joker",
+            "DRG"
+          ],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "C": {
+          "hideList": [],
+          "ordering": [
+            "DreamGaming",
+            "EVO",
+            "SexyBaccarat2",
+            "Allbet2",
+            "AsiaGaming2",
+            "BigGaming",
+            "GamePlay",
+            "PTL4",
+            "PPLiveCasino",
+            "MicroGamingPlus",
+            "SAGaming",
+            "WMCasino",
+            "WCasino",
+            "BBIN2",
+            "WE",
+            "YBL",
+            "ViaCasino",
+            "Ezugi"
+          ],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "S": {
+          "hideList": [],
+          "ordering": ["BTI", "CMD368", "M8", "IBC", "SBO2"],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "ES": {
+          "hideList": [],
+          "ordering": ["IME", "TFG"],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "F": {
+          "hideList": [],
+          "ordering": [
+            "JiLi",
+            "MiniTed",
+            "NextSpin",
+            "SpadeGaming",
+            "CQ9",
+            "FaChai",
+            "JDBGaming",
+            "PlayStar",
+            "RoyalSlotGaming",
+            "YesGetRich",
+            "DragoonSoft",
+            "V-Power",
+            "FastSpin",
+            "Rich88"
+          ],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "L": {
+          "hideList": [],
+          "ordering": [
+            "FunkyGames",
+            "GamePlay Lottery",
+            "QQKeno Lottery",
+            "TC Gaming",
+            "Win Win Lottery",
+            "EdayLotto"
+          ],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "G": {
+          "hideList": [],
+          "ordering": ["GamePlay", "V8Poker", "MiniTed"],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "CF": {
+          "hideList": [],
+          "ordering": ["Digmaan", "WS168"],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "P": {
+          "hideList": [],
+          "ordering": ["JiLi"]
+        },
+        "FG": {
+          "hideList": [],
+          "ordering": ["Spribe", "T1Games", "Jili"]
+        }
+      }
+    },
+    "affiliate": {
+      "menu": {
+        "hideList": ["Products", "Rewards"],
+        "ordering": [
+          "Home",
+          "Overview",
+          "Campaign",
+          "Gallery",
+          "Report",
+          "Commission Plans",
+          "FAQ",
+          "Contact"
+        ]
+      }
+    },
+    "mobile-sidemenu": {
+      "beforeLogin": {
+        "hideList": [],
+        "ordering": [
+          "Home",
+          "Slot",
+          "Fishing",
+          "Games",
+          "Lottery",
+          "FastGames",
+          "Affiliate",
+          "Desktop",
+          "Daily Mission",
+          "Lucky Wheel",
+          "Settings",
+          "ReferralMyAccount",
+          "VIP",
+          "Promotion",
+          "Download",
+          "ContactUs",
+          "LiveScore",
+          "Leaderboard",
+          "LiveTV"
+        ]
+      },
+      "afterLogin": {
+        "hideList": [],
+        "ordering": [
+          "Home",
+          "Slot",
+          "Fishing",
+          "Games",
+          "Lottery",
+          "FastGames",
+          "Affiliate",
+          "Desktop",
+          "Daily Mission",
+          "Lucky Wheel",
+          "Settings",
+          "ReferralMyAccount",
+          "VIP",
+          "Promotion",
+          "Download",
+          "LiveTV",
+          "ContactUs",
+          "LiveScore",
+          "Leaderboard"
+        ]
+      }
+    }
+  },
+  "TH_TH": {
+    "web": {
+      "menu": {
+        "hideList": ["Mega888", "918Kiss", "AffiliateNav"],
+        "ordering": [
+          "Home",
+          "Mobile",
+          "Slot",
+          "Fishing",
+          "Lottery",
+          "Sportsbook",
+          "Casino",
+          "ESportsbook",
+          "Cockfight",
+          "Poker",
+          "Games",
+          "FastGames",
+          "LiveScore",
+          "LiveTV",
+          "Leaderboard",
+          "DailyMission",
+          "LuckyWheel",
+          "ReferralMyAccount",
+          "VIP",
+          "Promotions",
+          "Download",
+          "ContactUs",
+          "LanguageSwitcher"
+        ]
+      },
+      "submenu": {
+        "SL": {
+          "hideList": [],
+          "ordering": [
+            "FunkyGames",
+            "HCSlot",
+            "JiLi",
+            "MicroGamingPlus",
+            "MiniTed",
+            "NetEnt",
+            "PGSlot",
+            "PlayNGo",
+            "RedTiger",
+            "AdvantPlay",
+            "AsiaGaming2",
+            "CQ9",
+            "GamePlay",
+            "Habanero",
+            "FaChai",
+            "JDBGaming",
+            "PlayStar",
+            "PT4",
+            "PragmaticPlay",
+            "RoyalSlotGaming",
+            "RelaxGaming",
+            "SpadeGaming",
+            "YesGetRich",
+            "YGGDrasil",
+            "NextSpin",
+            "BBIN2",
+            "DragoonSoft",
+            "Evoplay",
+            "ExpanseStudios",
+            "V-Power",
+            "FastSpin",
+            "Skywind",
+            "Askmeslot",
+            "Joker",
+            "DRG"
+          ],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "C": {
+          "hideList": [],
+          "ordering": [
+            "DreamGaming",
+            "EVO",
+            "SexyBaccarat2",
+            "Allbet2",
+            "AsiaGaming2",
+            "BigGaming",
+            "GamePlay",
+            "PTL4",
+            "PPLiveCasino",
+            "MicroGamingPlus",
+            "SAGaming",
+            "WMCasino",
+            "WCasino",
+            "BBIN2",
+            "WE",
+            "YBL",
+            "ViaCasino",
+            "Ezugi"
+          ],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "S": {
+          "hideList": [],
+          "ordering": ["BTI", "CMD368", "M8", "IBC", "SBO2"],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "ES": {
+          "hideList": [],
+          "ordering": ["IME", "TFG"],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "F": {
+          "hideList": [],
+          "ordering": [
+            "JiLi",
+            "MiniTed",
+            "NextSpin",
+            "SpadeGaming",
+            "CQ9",
+            "FaChai",
+            "JDBGaming",
+            "PlayStar",
+            "RoyalSlotGaming",
+            "YesGetRich",
+            "DragoonSoft",
+            "V-Power",
+            "FastSpin",
+            "Rich88"
+          ],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "L": {
+          "hideList": [],
+          "ordering": [
+            "FunkyGames",
+            "GamePlay Lottery",
+            "QQKeno Lottery",
+            "TC Gaming",
+            "Win Win Lottery",
+            "EdayLotto"
+          ],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "G": {
+          "hideList": [],
+          "ordering": ["GamePlay", "V8Poker", "MiniTed"],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "CF": {
+          "hideList": [],
+          "ordering": ["Digmaan", "WS168"],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "P": {
+          "hideList": [],
+          "ordering": ["JiLi"]
+        },
+        "FG": {
+          "hideList": [],
+          "ordering": ["Spribe", "T1Games", "Jili"]
+        }
+      }
+    },
+    "mobile": {
+      "menu": {
+        "hideList": ["918Kiss", "Mega888"],
+        "ordering": [
+          "Slots",
+          "Fishing",
+          "Lottery",
+          "Sports",
+          "Casino",
+          "ESportsbook",
+          "Cockfight",
+          "Poker",
+          "Games",
+          "FastGames",
+          "LiveTV"
+        ]
+      },
+      "submenu": {
+        "SL": {
+          "hideList": [],
+          "ordering": [
+            "FunkyGames",
+            "HCSlot",
+            "JiLi",
+            "MicroGamingPlus",
+            "MiniTed",
+            "NetEnt",
+            "PGSlot",
+            "PlayNGo",
+            "RedTiger",
+            "AdvantPlay",
+            "AsiaGaming2",
+            "CQ9",
+            "GamePlay",
+            "Habanero",
+            "FaChai",
+            "JDBGaming",
+            "PlayStar",
+            "PT4",
+            "PragmaticPlay",
+            "RoyalSlotGaming",
+            "RelaxGaming",
+            "SpadeGaming",
+            "YesGetRich",
+            "YGGDrasil",
+            "NextSpin",
+            "BBIN2",
+            "DragoonSoft",
+            "Evoplay",
+            "ExpanseStudios",
+            "V-Power",
+            "FastSpin",
+            "Skywind",
+            "Askmeslot",
+            "Joker",
+            "DRG"
+          ],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "C": {
+          "hideList": [],
+          "ordering": [
+            "DreamGaming",
+            "EVO",
+            "SexyBaccarat2",
+            "Allbet2",
+            "AsiaGaming2",
+            "BigGaming",
+            "GamePlay",
+            "PTL4",
+            "PPLiveCasino",
+            "MicroGamingPlus",
+            "SAGaming",
+            "WMCasino",
+            "WCasino",
+            "BBIN2",
+            "WE",
+            "YBL",
+            "ViaCasino",
+            "Ezugi"
+          ],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "S": {
+          "hideList": [],
+          "ordering": ["BTI", "CMD368", "M8", "IBC", "SBO2"],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "ES": {
+          "hideList": [],
+          "ordering": ["IME", "TFG"],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "F": {
+          "hideList": [],
+          "ordering": [
+            "JiLi",
+            "MiniTed",
+            "NextSpin",
+            "SpadeGaming",
+            "CQ9",
+            "FaChai",
+            "JDBGaming",
+            "PlayStar",
+            "RoyalSlotGaming",
+            "YesGetRich",
+            "DragoonSoft",
+            "V-Power",
+            "FastSpin",
+            "Rich88"
+          ],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "L": {
+          "hideList": [],
+          "ordering": [
+            "FunkyGames",
+            "GamePlay Lottery",
+            "QQKeno Lottery",
+            "TC Gaming",
+            "Win Win Lottery",
+            "EdayLotto"
+          ],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "G": {
+          "hideList": [],
+          "ordering": ["GamePlay", "V8Poker", "MiniTed"],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "CF": {
+          "hideList": [],
+          "ordering": ["Digmaan", "WS168"],
+          "newProvider": [],
+          "hotProvider": [],
+          "disableBaseMenuHotNewProvider": false
+        },
+        "P": {
+          "hideList": [],
+          "ordering": ["JiLi"]
+        },
+        "FG": {
+          "hideList": [],
+          "ordering": ["Spribe", "T1Games", "Jili"]
+        }
+      }
+    },
+    "affiliate": {
+      "menu": {
+        "hideList": ["Products", "Rewards"],
+        "ordering": [
+          "Home",
+          "Overview",
+          "Campaign",
+          "Gallery",
+          "Report",
+          "Commission Plans",
+          "FAQ",
+          "Contact"
+        ]
+      }
+    },
+    "mobile-sidemenu": {
+      "beforeLogin": {
+        "hideList": [],
+        "ordering": [
+          "Home",
+          "Slot",
+          "Fishing",
+          "Games",
+          "Lottery",
+          "FastGames",
+          "Affiliate",
+          "Desktop",
+          "Daily Mission",
+          "Lucky Wheel",
+          "Settings",
+          "ReferralMyAccount",
+          "VIP",
+          "Promotion",
+          "Download",
+          "LiveTV",
+          "ContactUs",
+          "LiveScore",
+          "Leaderboard"
+        ]
+      },
+      "afterLogin": {
+        "hideList": [],
+        "ordering": [
+          "Home",
+          "Slot",
+          "Fishing",
+          "Games",
+          "Lottery",
+          "FastGames",
+          "Affiliate",
+          "Desktop",
+          "Daily Mission",
+          "Lucky Wheel",
+          "Settings",
+          "ReferralMyAccount",
+          "VIP",
+          "Promotion",
+          "Download",
+          "LiveTV",
+          "ContactUs",
+          "LiveScore",
+          "Leaderboard"
+        ]
+      }
+    }
+  }
+}
