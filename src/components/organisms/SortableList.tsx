@@ -1,4 +1,3 @@
-import React from "react";
 import {
   DndContext,
   closestCenter,
@@ -13,7 +12,6 @@ import {
   sortableKeyboardCoordinates,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
-import { DraggableItem } from "../molecules/DraggableItem";
 
 interface SortableListProps {
   items: string[];
