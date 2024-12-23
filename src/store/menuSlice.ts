@@ -1,7 +1,24 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { MenuSection } from "../types/menu";
+import { Draft } from "@reduxjs/toolkit";
+import {
+  MenuSection,
+  SectionType,
+  WebMobileSection,
+  MobileSideMenu,
+  SubMenuConfig,
+  BaseMenuConfig,
+} from "../types/menu";
+
+type WritableSection = Draft<WebMobileSection | MobileSideMenu>;
+type WritableSubMenu = Draft<SubMenuConfig>;
+type WritableBaseMenu = Draft<BaseMenuConfig>;
 
 export type LanguageOption = "en" | "zh" | "ALL";
+
+interface MenuItem {
+  id: number;
+  [key: string]: any;
+}
 
 interface MenuState {
   data: MenuSection;
@@ -13,9 +30,20 @@ interface MenuState {
   menuItems: {
     en: MenuItem[];
     zh: MenuItem[];
-    // ... other languages ...
   };
 }
+
+const isMobileSideMenu = (
+  section: WritableSection
+): section is Draft<MobileSideMenu> => {
+  return "beforeLogin" in section && "afterLogin" in section;
+};
+
+const isWebMobileSection = (
+  section: WritableSection
+): section is Draft<WebMobileSection> => {
+  return "menu" in section && "submenu" in section;
+};
 
 const initialState: MenuState = {
   data: {} as MenuSection,
@@ -27,7 +55,6 @@ const initialState: MenuState = {
   menuItems: {
     en: [],
     zh: [],
-    // ... other languages ...
   },
 };
 
@@ -84,46 +111,47 @@ export const menuSlice = createSlice({
 
       // Get the reordered list from EN first
       let reorderedList: string[] = [];
-      const refSection = referenceData[state.activeSection];
+      const refSection = referenceData[
+        state.activeSection as SectionType
+      ] as WritableSection;
 
-      if (state.activeSection === "mobile-sidemenu") {
+      if (
+        state.activeSection === "mobile-sidemenu" &&
+        isMobileSideMenu(refSection)
+      ) {
         const section = listKey as "beforeLogin" | "afterLogin";
         reorderedList = reorder(refSection[section].ordering);
-      } else if (listKey === "main-menu") {
-        reorderedList = reorder(refSection.menu.ordering);
-      } else if (category) {
-        // Handle submenu reordering with ID updates
-        const submenu = refSection.submenu[category];
-        if (submenu) {
-          reorderedList = reorder(submenu.ordering);
-
-          // Update IDs based on new positions
-          languages.forEach((lang) => {
-            const currentSection = state.data[lang][state.activeSection];
-            const submenuItems = currentSection.submenu[category];
-
-            reorderedList.forEach((itemKey, index) => {
-              if (submenuItems[itemKey]) {
-                submenuItems[itemKey].id = index + 1;
-              }
-            });
-          });
+      } else if (isWebMobileSection(refSection)) {
+        if (listKey === "main-menu") {
+          reorderedList = reorder(refSection.menu.ordering);
+        } else if (category) {
+          const submenu = refSection.submenu[category] as WritableSubMenu;
+          if (submenu) {
+            reorderedList = reorder(submenu.ordering);
+          }
         }
       }
 
       // Apply the same ordering to all selected languages
       languages.forEach((lang) => {
-        const currentSection = state.data[lang][state.activeSection];
+        const currentSection = state.data[lang][
+          state.activeSection as SectionType
+        ] as WritableSection;
 
-        if (state.activeSection === "mobile-sidemenu") {
+        if (
+          state.activeSection === "mobile-sidemenu" &&
+          isMobileSideMenu(currentSection)
+        ) {
           const section = listKey as "beforeLogin" | "afterLogin";
           currentSection[section].ordering = [...reorderedList];
-        } else if (listKey === "main-menu") {
-          currentSection.menu.ordering = [...reorderedList];
-        } else if (category) {
-          const submenu = currentSection.submenu[category];
-          if (submenu) {
-            submenu.ordering = [...reorderedList];
+        } else if (isWebMobileSection(currentSection)) {
+          if (listKey === "main-menu") {
+            currentSection.menu.ordering = [...reorderedList];
+          } else if (category) {
+            const submenu = currentSection.submenu[category] as WritableSubMenu;
+            if (submenu) {
+              submenu.ordering = [...reorderedList];
+            }
           }
         }
       });
@@ -149,16 +177,27 @@ export const menuSlice = createSlice({
           : state.data[state.activeLanguage];
 
       // Get the target section from EN first
-      let referenceSection;
-      if (state.activeSection === "mobile-sidemenu") {
-        referenceSection =
-          referenceData[state.activeSection][
-            category as "beforeLogin" | "afterLogin"
-          ];
-      } else if (!category) {
-        referenceSection = referenceData[state.activeSection].menu;
-      } else {
-        referenceSection = referenceData[state.activeSection].submenu[category];
+      let referenceSection: WritableBaseMenu | undefined;
+      const section = referenceData[
+        state.activeSection as SectionType
+      ] as WritableSection;
+
+      if (
+        state.activeSection === "mobile-sidemenu" &&
+        isMobileSideMenu(section)
+      ) {
+        referenceSection = section[category as "beforeLogin" | "afterLogin"];
+      } else if (isWebMobileSection(section)) {
+        if (!category) {
+          referenceSection = section.menu;
+        } else {
+          const submenu = section.submenu[category] as WritableSubMenu;
+          referenceSection = submenu;
+        }
+      }
+
+      if (!referenceSection) {
+        return;
       }
 
       // Initialize hideList if it doesn't exist
@@ -177,21 +216,28 @@ export const menuSlice = createSlice({
 
       // Apply the same hideList to all selected languages
       languages.forEach((lang) => {
-        let targetSection;
+        const section = state.data[lang][
+          state.activeSection as SectionType
+        ] as WritableSection;
+        let targetSection: WritableBaseMenu | undefined;
 
-        if (state.activeSection === "mobile-sidemenu") {
-          targetSection =
-            state.data[lang][state.activeSection][
-              category as "beforeLogin" | "afterLogin"
-            ];
-        } else if (!category) {
-          targetSection = state.data[lang][state.activeSection].menu;
-        } else {
-          targetSection =
-            state.data[lang][state.activeSection].submenu[category];
+        if (
+          state.activeSection === "mobile-sidemenu" &&
+          isMobileSideMenu(section)
+        ) {
+          targetSection = section[category as "beforeLogin" | "afterLogin"];
+        } else if (isWebMobileSection(section)) {
+          if (!category) {
+            targetSection = section.menu;
+          } else {
+            const submenu = section.submenu[category] as WritableSubMenu;
+            targetSection = submenu;
+          }
         }
 
-        targetSection.hideList = [...updatedHideList];
+        if (targetSection) {
+          targetSection.hideList = [...updatedHideList];
+        }
       });
     },
     toggleFlag: (
@@ -210,9 +256,15 @@ export const menuSlice = createSlice({
           : [state.activeLanguage];
 
       languages.forEach((lang) => {
-        const targetSection =
-          state.data[lang][state.activeSection].submenu[category];
-        targetSection[flagName] = !targetSection[flagName];
+        const section = state.data[lang][
+          state.activeSection as SectionType
+        ] as WritableSection;
+        if (isWebMobileSection(section)) {
+          const submenu = section.submenu[category] as WritableSubMenu;
+          if (submenu) {
+            submenu[flagName] = !submenu[flagName];
+          }
+        }
       });
     },
     toggleProvider: (
@@ -230,17 +282,34 @@ export const menuSlice = createSlice({
           : [state.activeLanguage];
 
       languages.forEach((lang) => {
-        const targetSection =
-          state.data[lang][state.activeSection].submenu[category];
-        if (!targetSection[providerType]) {
-          targetSection[providerType] = [];
-        }
-
-        const index = targetSection[providerType]!.indexOf(item);
-        if (index > -1) {
-          targetSection[providerType]!.splice(index, 1);
-        } else {
-          targetSection[providerType]!.push(item);
+        const section = state.data[lang][
+          state.activeSection as SectionType
+        ] as WritableSection;
+        if (isWebMobileSection(section)) {
+          const submenu = section.submenu[category] as WritableSubMenu;
+          if (submenu) {
+            if (providerType === "newProvider") {
+              if (!submenu.newProvider) {
+                submenu.newProvider = [];
+              }
+              const index = submenu.newProvider.indexOf(item);
+              if (index > -1) {
+                submenu.newProvider.splice(index, 1);
+              } else {
+                submenu.newProvider.push(item);
+              }
+            } else if (providerType === "hotProvider") {
+              if (!submenu.hotProvider) {
+                submenu.hotProvider = [];
+              }
+              const index = submenu.hotProvider.indexOf(item);
+              if (index > -1) {
+                submenu.hotProvider.splice(index, 1);
+              } else {
+                submenu.hotProvider.push(item);
+              }
+            }
+          }
         }
       });
     },

@@ -6,6 +6,8 @@ import {
   EyeOpenIcon,
   EyeNoneIcon,
 } from "@radix-ui/react-icons";
+import { HiSparkles, HiFire } from "react-icons/hi";
+
 import { Badge } from "../atoms/Badge";
 
 interface DraggableItemProps {
@@ -88,13 +90,18 @@ export const DraggableItem = React.memo(
                   className="p-1 rounded-full hover:bg-gray-100 transition-colors"
                   title="Toggle New"
                 >
-                  <span
+                  <HiSparkles
+                    className={`text-base ${
+                      isNew ? "text-green-600" : "text-gray-400"
+                    }`}
+                  />
+                  {/* <span
                     className={`text-xs font-medium px-1 ${
                       isNew ? "text-green-600" : "text-gray-400"
                     }`}
                   >
                     N
-                  </span>
+                  </span> */}
                 </button>
               )}
 
@@ -108,13 +115,11 @@ export const DraggableItem = React.memo(
                   className="p-1 rounded-full hover:bg-gray-100 transition-colors"
                   title="Toggle Hot"
                 >
-                  <span
-                    className={`text-xs font-medium px-1 ${
+                  <HiFire
+                    className={`text-base ${
                       isHot ? "text-orange-600" : "text-gray-400"
                     }`}
-                  >
-                    H
-                  </span>
+                  />
                 </button>
               )}
 

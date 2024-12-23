@@ -29,11 +29,11 @@ export interface AffiliateSection {
   menu: BaseMenuConfig;
 }
 
-export interface LanguageSection {
-  [key in SectionType]: key extends "mobile-sidemenu"
+export type LanguageSection = {
+  [K in SectionType]: K extends "mobile-sidemenu"
     ? MobileSideMenu
     : WebMobileSection;
-}
+};
 
 export interface MenuSection {
   [key: string]: LanguageSection;
