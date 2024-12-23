@@ -8,6 +8,7 @@ interface MenuCategoriesProps {
   categories: {
     [key: string]: SubMenuConfig | { ordering: string[] };
   };
+  hasHotNewProvider: boolean;
   onDragEnd: (category: string, oldIndex: number, newIndex: number) => void;
   onToggleHide: (category: string, item: string) => void;
   onToggleFlag: (
@@ -24,6 +25,7 @@ interface MenuCategoriesProps {
 export const MenuCategories = ({
   categories,
   onDragEnd,
+  hasHotNewProvider,
   onToggleHide,
   onToggleFlag,
   onToggleProvider,
@@ -179,6 +181,7 @@ export const MenuCategories = ({
             hideList={(categories[category] as SubMenuConfig).hideList || []}
             hotProvider={(categories[category] as SubMenuConfig).hotProvider}
             newProvider={(categories[category] as SubMenuConfig).newProvider}
+            hasHotNewProvider={hasHotNewProvider}
             onDragEnd={(oldIndex, newIndex) =>
               onDragEnd(category, oldIndex, newIndex)
             }

@@ -145,6 +145,7 @@ export const MenuConfigurationPage = ({ data }: { data: MenuSectionType }) => {
             title="Before Login"
             items={section.beforeLogin.ordering}
             hideList={section.beforeLogin.hideList}
+            hasHotNewProvider={false}
             onDragEnd={(oldIndex, newIndex) =>
               handleListReorder("beforeLogin", null, oldIndex, newIndex)
             }
@@ -153,6 +154,7 @@ export const MenuConfigurationPage = ({ data }: { data: MenuSectionType }) => {
           />
           <MenuSection
             title="After Login"
+            hasHotNewProvider={false}
             items={section.afterLogin.ordering}
             hideList={section.afterLogin.hideList}
             onDragEnd={(oldIndex, newIndex) =>
@@ -176,6 +178,7 @@ export const MenuConfigurationPage = ({ data }: { data: MenuSectionType }) => {
             title="Main Menu"
             items={section.menu.ordering}
             hideList={section.menu.hideList}
+            hasHotNewProvider={false}
             onDragEnd={(oldIndex, newIndex) =>
               handleListReorder("main-menu", null, oldIndex, newIndex)
             }
@@ -195,6 +198,7 @@ export const MenuConfigurationPage = ({ data }: { data: MenuSectionType }) => {
             onDragEnd={(category, oldIndex, newIndex) =>
               handleListReorder("submenu", category, oldIndex, newIndex)
             }
+            hasHotNewProvider={true}
             onToggleHide={(category, item) => handleToggleHide(category, item)}
             onToggleFlag={handleToggleFlag}
             onToggleProvider={(category, item, providerType) =>

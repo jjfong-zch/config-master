@@ -11,6 +11,7 @@ import { Badge } from "../atoms/Badge";
 interface DraggableItemProps {
   id: string;
   isHidden: boolean;
+  hasHotNewProvider?: boolean;
   isHot?: boolean;
   isNew?: boolean;
   onToggleHide: () => void;
@@ -24,6 +25,7 @@ export const DraggableItem = React.memo(
     isHidden,
     isHot,
     isNew,
+    hasHotNewProvider,
     onToggleHide,
     onToggleHot,
     onToggleNew,
@@ -44,7 +46,8 @@ export const DraggableItem = React.memo(
       transform: CSS.Transform.toString(transform),
       transition,
     };
-
+    const hasHot = hasHotNewProvider && onToggleHot;
+    const hasNew = hasHotNewProvider && onToggleNew;
     return (
       <div
         ref={setNodeRef}
@@ -71,11 +74,11 @@ export const DraggableItem = React.memo(
           <span className="font-medium text-sm text-gray-700">{id}</span>
           <div className="flex items-center gap-2">
             {isHidden && <Badge variant="hidden">Hidden</Badge>}
-            {isHot && <Badge variant="hot">Hot</Badge>}
-            {isNew && <Badge variant="new">New</Badge>}
+            {/* {isHot && <Badge>Hot</Badge>}
+            {isNew && <Badge>New</Badge>} */}
 
             <div className="flex gap-1">
-              {onToggleNew && (
+              {hasNew && (
                 <button
                   onClick={(e) => {
                     e.preventDefault();
@@ -95,7 +98,7 @@ export const DraggableItem = React.memo(
                 </button>
               )}
 
-              {onToggleHot && (
+              {hasHot && (
                 <button
                   onClick={(e) => {
                     e.preventDefault();
