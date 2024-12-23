@@ -6,6 +6,8 @@ export interface BaseMenuConfig {
 export interface SubMenuConfig extends BaseMenuConfig {
   newProvider?: string[];
   hotProvider?: string[];
+  disableOverrideFromBaseMenu?: boolean;
+  disableBaseMenuHotNewProvider?: boolean;
 }
 
 export type SectionType = "web" | "mobile" | "mobile-sidemenu" | "affiliate";
