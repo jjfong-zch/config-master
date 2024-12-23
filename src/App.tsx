@@ -1,6 +1,6 @@
 import { Provider } from "react-redux";
 import { MenuConfigurationPage } from "./components/pages/MenuConfigurationPage";
-import menuData from "./sample.json";
+import menuData from "./mimic-menu-setting.json";
 import { store } from "./store/store";
 
 export default function App() {
