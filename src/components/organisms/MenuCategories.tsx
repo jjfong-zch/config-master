@@ -3,7 +3,6 @@ import * as Tabs from "@radix-ui/react-tabs";
 import { MenuSection } from "./MenuSection";
 import { SubMenuConfig } from "../../types/menu";
 import { getCategoryLabel } from "../../constants/categoryMappings";
-import { EyeOpenIcon, EyeNoneIcon } from "@radix-ui/react-icons";
 
 interface MenuCategoriesProps {
   categories: {
@@ -11,12 +10,23 @@ interface MenuCategoriesProps {
   };
   onDragEnd: (category: string, oldIndex: number, newIndex: number) => void;
   onToggleHide: (category: string, item: string) => void;
+  onToggleFlag: (
+    category: string,
+    flagName: "disableOverrideFromBaseMenu" | "disableBaseMenuHotNewProvider"
+  ) => void;
+  onToggleProvider: (
+    category: string,
+    item: string,
+    providerType: "newProvider" | "hotProvider"
+  ) => void;
 }
 
 export const MenuCategories = ({
   categories,
   onDragEnd,
   onToggleHide,
+  onToggleFlag,
+  onToggleProvider,
 }: MenuCategoriesProps) => {
   const allCategories = Object.keys(categories);
   const defaultCategory = allCategories[0];
@@ -130,17 +140,52 @@ export const MenuCategories = ({
           </Tabs.List>
         </div>
       </div>
-
       {allCategories.map((category) => (
         <Tabs.Content key={category} value={category} className="space-y-4">
+          <div className="mb-4 flex flex-col gap-2 p-4 rounded-lg bg-blue-50 text-blue-700">
+            <p>Force follow settings here:</p>
+            <label className="flex items-center gap-2 text-sm text-gray-600">
+              <input
+                type="checkbox"
+                checked={
+                  (categories[category] as SubMenuConfig)
+                    .disableOverrideFromBaseMenu || false
+                }
+                onChange={() =>
+                  onToggleFlag(category, "disableOverrideFromBaseMenu")
+                }
+                className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              />
+              Menu sequence
+            </label>
+            <label className="flex items-center gap-2 text-sm text-gray-600">
+              <input
+                type="checkbox"
+                checked={
+                  (categories[category] as SubMenuConfig)
+                    .disableBaseMenuHotNewProvider || false
+                }
+                onChange={() =>
+                  onToggleFlag(category, "disableBaseMenuHotNewProvider")
+                }
+                className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              />
+              Hot New Provider
+            </label>
+          </div>
           <MenuSection
             title={getCategoryLabel(category)}
             items={(categories[category] as SubMenuConfig).ordering}
             hideList={(categories[category] as SubMenuConfig).hideList || []}
+            hotProvider={(categories[category] as SubMenuConfig).hotProvider}
+            newProvider={(categories[category] as SubMenuConfig).newProvider}
             onDragEnd={(oldIndex, newIndex) =>
               onDragEnd(category, oldIndex, newIndex)
             }
             onToggleHide={(item) => onToggleHide(category, item)}
+            onToggleProvider={(item, providerType) =>
+              onToggleProvider(category, item, providerType)
+            }
           />
         </Tabs.Content>
       ))}

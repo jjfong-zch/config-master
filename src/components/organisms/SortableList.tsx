@@ -17,21 +17,27 @@ import { DraggableItem } from "../molecules/DraggableItem";
 
 interface SortableListProps {
   items: string[];
-  hideList?: string[];
+  hideList: string[];
+  hotProvider?: string[];
+  newProvider?: string[];
   onDragEnd: (oldIndex: number, newIndex: number) => void;
   onToggleHide: (item: string) => void;
+  onToggleProvider: (
+    item: string,
+    providerType: "newProvider" | "hotProvider"
+  ) => void;
+  children: React.ReactNode;
 }
 
 export const SortableList = ({
   items,
-  hideList = [],
   onDragEnd,
-  onToggleHide,
+  children,
 }: SortableListProps) => {
   const sensors = useSensors(
     useSensor(PointerSensor, {
       activationConstraint: {
-        distance: 5, // 5px movement required before drag starts
+        distance: 5,
       },
     }),
     useSensor(KeyboardSensor, {
@@ -41,7 +47,7 @@ export const SortableList = ({
 
   const handleDragEnd: DndContextProps["onDragEnd"] = (event) => {
     const { active, over } = event;
-    if (!over || hideList.includes(active.id.toString())) return;
+    if (!over) return;
 
     if (active.id !== over.id) {
       const oldIndex = items.indexOf(active.id.toString());
@@ -58,14 +64,7 @@ export const SortableList = ({
     >
       <SortableContext items={items} strategy={verticalListSortingStrategy}>
         <div className="space-y-2 min-h-[50px] max-h-[400px] rounded-lg p-4 overflow-y-auto bg-gray-50/50">
-          {items.map((id) => (
-            <DraggableItem
-              key={id}
-              id={id}
-              isHidden={hideList.includes(id)}
-              onToggleHide={() => onToggleHide(id)}
-            />
-          ))}
+          {children}
         </div>
       </SortableContext>
     </DndContext>

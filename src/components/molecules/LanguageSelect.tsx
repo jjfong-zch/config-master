@@ -11,6 +11,7 @@ interface LanguageSelectProps {
 export const LanguageSelect = React.memo(
   ({ languages, value, onChange }: LanguageSelectProps) => {
     const allLanguages = ["ALL", ...languages];
+    const referenceLanguage = languages[0];
 
     return (
       <Select.Root value={value} onValueChange={onChange}>
@@ -20,18 +21,21 @@ export const LanguageSelect = React.memo(
           focus:ring-blue-500 focus:ring-offset-2"
         >
           <Select.Value>
-            <div className="flex flex-col">
-              {value === "ALL" ? (
+            {value === "ALL" ? (
+              <span className="flex flex-col">
                 <span className="font-medium">ALL Languages</span>
-              ) : (
-                <>
-                  <span className="font-medium">{value.split("_")[0]}</span>
-                  <span className="text-xs text-gray-500">
-                    {value.split("_")[1]}
-                  </span>
-                </>
-              )}
-            </div>
+                <span className="text-xs text-gray-500">
+                  Reference: {referenceLanguage}
+                </span>
+              </span>
+            ) : (
+              <span className="flex flex-col">
+                <span className="font-medium">{value.split("_")[0]}</span>
+                <span className="text-xs text-gray-500">
+                  {value.split("_")[1]}
+                </span>
+              </span>
+            )}
           </Select.Value>
           <Select.Icon>
             <ChevronDownIcon className="w-4 h-4 text-gray-500" />

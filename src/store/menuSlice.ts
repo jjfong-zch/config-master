@@ -6,6 +6,7 @@ export type LanguageOption = "en" | "zh" | "ALL";
 interface MenuState {
   data: MenuSection;
   activeLanguage: string;
+  referenceLanguage: string;
   activeSection: string;
   activeView: "main" | "submenu";
   selectedLanguage: LanguageOption;
@@ -19,6 +20,7 @@ interface MenuState {
 const initialState: MenuState = {
   data: {} as MenuSection,
   activeLanguage: "",
+  referenceLanguage: "",
   activeSection: "web",
   activeView: "main",
   selectedLanguage: "en" as LanguageOption,
@@ -38,7 +40,11 @@ export const menuSlice = createSlice({
       state.activeLanguage = Object.keys(action.payload)[0];
     },
     setActiveLanguage: (state, action: PayloadAction<string>) => {
+      console.log(action.payload);
       state.activeLanguage = action.payload;
+    },
+    setReferenceLanguage: (state, action: PayloadAction<string>) => {
+      state.referenceLanguage = action.payload;
     },
     setActiveSection: (state, action: PayloadAction<string>) => {
       state.activeSection = action.payload;
@@ -188,16 +194,69 @@ export const menuSlice = createSlice({
         targetSection.hideList = [...updatedHideList];
       });
     },
+    toggleFlag: (
+      state,
+      action: PayloadAction<{
+        category: string;
+        flagName:
+          | "disableOverrideFromBaseMenu"
+          | "disableBaseMenuHotNewProvider";
+      }>
+    ) => {
+      const { category, flagName } = action.payload;
+      const languages =
+        state.activeLanguage === "ALL"
+          ? Object.keys(state.data)
+          : [state.activeLanguage];
+
+      languages.forEach((lang) => {
+        const targetSection =
+          state.data[lang][state.activeSection].submenu[category];
+        targetSection[flagName] = !targetSection[flagName];
+      });
+    },
+    toggleProvider: (
+      state,
+      action: PayloadAction<{
+        category: string;
+        item: string;
+        providerType: "newProvider" | "hotProvider";
+      }>
+    ) => {
+      const { category, item, providerType } = action.payload;
+      const languages =
+        state.activeLanguage === "ALL"
+          ? Object.keys(state.data)
+          : [state.activeLanguage];
+
+      languages.forEach((lang) => {
+        const targetSection =
+          state.data[lang][state.activeSection].submenu[category];
+        if (!targetSection[providerType]) {
+          targetSection[providerType] = [];
+        }
+
+        const index = targetSection[providerType]!.indexOf(item);
+        if (index > -1) {
+          targetSection[providerType]!.splice(index, 1);
+        } else {
+          targetSection[providerType]!.push(item);
+        }
+      });
+    },
   },
 });
 
 export const {
   initializeMenu,
   setActiveLanguage,
+  setReferenceLanguage,
   setActiveSection,
   setActiveView,
   reorderItems,
   toggleHideItem,
+  toggleFlag,
+  toggleProvider,
 } = menuSlice.actions;
 
 export default menuSlice.reducer;

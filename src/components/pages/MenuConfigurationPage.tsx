@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect, useCallback, useMemo } from "react";
 import { MenuLayout } from "../templates/MenuLayout";
 import { MenuSection } from "../organisms/MenuSection";
 import { Button } from "../atoms/Button";
@@ -12,6 +12,9 @@ import {
   setActiveView,
   reorderItems,
   toggleHideItem,
+  setReferenceLanguage,
+  toggleFlag,
+  toggleProvider,
 } from "../../store/menuSlice";
 import { MenuSection as MenuSectionType } from "../../types/menu";
 import { LanguageSelect } from "../molecules/LanguageSelect";
@@ -55,8 +58,58 @@ export const MenuConfigurationPage = ({ data }: { data: MenuSectionType }) => {
     dispatch(toggleHideItem({ category, item }));
   };
 
-  const handleLanguageChange = (newLanguage: string) => {
-    dispatch(setActiveLanguage(newLanguage));
+  const handleLanguageChange = useCallback(
+    (newLanguage: string) => {
+      if (newLanguage === activeLanguage) return;
+
+      if (newLanguage === "ALL") {
+        const firstLanguage = Object.keys(menuData)[0];
+        dispatch(setActiveLanguage(firstLanguage));
+        dispatch(setReferenceLanguage(firstLanguage));
+      } else {
+        dispatch(setActiveLanguage(newLanguage));
+        dispatch(setReferenceLanguage(newLanguage));
+      }
+    },
+    [activeLanguage, dispatch, menuData]
+  );
+
+  const languages = useMemo(() => Object.keys(menuData), [menuData]);
+
+  const handleToggleFlag = (
+    category: string,
+    flagName: "disableOverrideFromBaseMenu" | "disableBaseMenuHotNewProvider"
+  ) => {
+    const updatedCategories = {
+      ...menuData[activeLanguage][activeSection].submenu,
+      [category]: {
+        ...(menuData[activeLanguage][activeSection].submenu[
+          category
+        ] as SubMenuConfig),
+        [flagName]: !(
+          menuData[activeLanguage][activeSection].submenu[
+            category
+          ] as SubMenuConfig
+        )[flagName],
+      },
+    };
+
+    // Update your state management here
+    dispatch(toggleFlag({ category, flagName }));
+  };
+
+  const handleToggleProvider = (
+    category: string,
+    item: string,
+    providerType: "newProvider" | "hotProvider"
+  ) => {
+    dispatch(
+      toggleProvider({
+        category,
+        item,
+        providerType,
+      })
+    );
   };
 
   const renderHeader = () => (
@@ -123,7 +176,7 @@ export const MenuConfigurationPage = ({ data }: { data: MenuSectionType }) => {
           Region & Language
         </h3>
         <LanguageSelect
-          languages={Object.keys(menuData)}
+          languages={languages}
           value={activeLanguage}
           onChange={handleLanguageChange}
         />
@@ -182,7 +235,6 @@ export const MenuConfigurationPage = ({ data }: { data: MenuSectionType }) => {
       return (
         <div className="space-y-8">
           <MenuSection
-            title="Before Login Menu"
             items={menuData[activeLanguage][activeSection].beforeLogin.ordering}
             hideList={
               menuData[activeLanguage][activeSection].beforeLogin.hideList
@@ -193,7 +245,6 @@ export const MenuConfigurationPage = ({ data }: { data: MenuSectionType }) => {
             onToggleHide={(item) => handleToggleHide("beforeLogin", item)}
           />
           <MenuSection
-            title="After Login Menu"
             items={menuData[activeLanguage][activeSection].afterLogin.ordering}
             hideList={
               menuData[activeLanguage][activeSection].afterLogin.hideList
@@ -209,7 +260,7 @@ export const MenuConfigurationPage = ({ data }: { data: MenuSectionType }) => {
 
     if (activeView === "main") {
       return (
-        <div className="space-y-8">
+        <div className="space-y-8 main">
           <MenuSection
             title="Main Menu"
             items={menuData[activeLanguage][activeSection].menu.ordering}
@@ -233,6 +284,10 @@ export const MenuConfigurationPage = ({ data }: { data: MenuSectionType }) => {
               handleListReorder("submenu", category, oldIndex, newIndex)
             }
             onToggleHide={(category, item) => handleToggleHide(category, item)}
+            onToggleFlag={handleToggleFlag}
+            onToggleProvider={(category, item, providerType) =>
+              handleToggleProvider(category, item, providerType)
+            }
           />
         </div>
       </div>

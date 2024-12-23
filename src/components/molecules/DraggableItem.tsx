@@ -11,11 +11,23 @@ import { Badge } from "../atoms/Badge";
 interface DraggableItemProps {
   id: string;
   isHidden: boolean;
+  isHot?: boolean;
+  isNew?: boolean;
   onToggleHide: () => void;
+  onToggleHot?: () => void;
+  onToggleNew?: () => void;
 }
 
 export const DraggableItem = React.memo(
-  ({ id, isHidden, onToggleHide }: DraggableItemProps) => {
+  ({
+    id,
+    isHidden,
+    isHot,
+    isNew,
+    onToggleHide,
+    onToggleHot,
+    onToggleNew,
+  }: DraggableItemProps) => {
     const {
       attributes,
       listeners,
@@ -59,20 +71,65 @@ export const DraggableItem = React.memo(
           <span className="font-medium text-sm text-gray-700">{id}</span>
           <div className="flex items-center gap-2">
             {isHidden && <Badge variant="hidden">Hidden</Badge>}
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                onToggleHide();
-              }}
-              className="p-1 rounded-full hover:bg-gray-100 transition-colors"
-            >
-              {isHidden ? (
-                <EyeOpenIcon className="w-4 h-4 text-gray-400 hover:text-gray-600" />
-              ) : (
-                <EyeNoneIcon className="w-4 h-4 text-gray-400 hover:text-gray-600" />
+            {isHot && <Badge variant="hot">Hot</Badge>}
+            {isNew && <Badge variant="new">New</Badge>}
+
+            <div className="flex gap-1">
+              {onToggleNew && (
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    onToggleNew();
+                  }}
+                  className="p-1 rounded-full hover:bg-gray-100 transition-colors"
+                  title="Toggle New"
+                >
+                  <span
+                    className={`text-xs font-medium px-1 ${
+                      isNew ? "text-green-600" : "text-gray-400"
+                    }`}
+                  >
+                    N
+                  </span>
+                </button>
               )}
-            </button>
+
+              {onToggleHot && (
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    onToggleHot();
+                  }}
+                  className="p-1 rounded-full hover:bg-gray-100 transition-colors"
+                  title="Toggle Hot"
+                >
+                  <span
+                    className={`text-xs font-medium px-1 ${
+                      isHot ? "text-orange-600" : "text-gray-400"
+                    }`}
+                  >
+                    H
+                  </span>
+                </button>
+              )}
+
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  onToggleHide();
+                }}
+                className="p-1 rounded-full hover:bg-gray-100 transition-colors"
+              >
+                {isHidden ? (
+                  <EyeOpenIcon className="w-4 h-4" />
+                ) : (
+                  <EyeNoneIcon className="w-4 h-4" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </div>
