@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useMemo } from "react";
+import { useEffect, useCallback, useMemo, useState } from "react";
 import { MenuLayout } from "../templates/MenuLayout";
 import { MenuSection } from "../organisms/MenuSection";
 import { Button } from "../atoms/Button";
@@ -14,6 +14,7 @@ import {
   setReferenceLanguage,
   toggleFlag,
   toggleProvider,
+  addProvider,
 } from "../../store/menuSlice";
 import {
   MenuSection as MenuSectionType,
@@ -22,6 +23,8 @@ import {
   SectionType,
 } from "../../types/menu";
 import { RootState } from "../../store/store";
+import { PlusIcon } from "@radix-ui/react-icons";
+import { AddProviderModal } from "../molecules/AddProviderModal";
 
 type MenuData = {
   [key: string]: {
@@ -57,6 +60,8 @@ export const MenuConfigurationPage = ({ data }: { data: MenuSectionType }) => {
     activeSection,
     activeView,
   } = useAppSelector((state: RootState) => state.menu);
+
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
 
   useEffect(() => {
     dispatch(initializeMenu(data));
@@ -125,6 +130,15 @@ export const MenuConfigurationPage = ({ data }: { data: MenuSectionType }) => {
         providerType,
       })
     );
+  };
+
+  const handleAddProvider = (data: {
+    providerName: string;
+    categories: string[];
+    languages: string[];
+    targetType: "menu" | "submenu";
+  }) => {
+    dispatch(addProvider(data));
   };
 
   const renderContent = () => {
@@ -241,6 +255,20 @@ export const MenuConfigurationPage = ({ data }: { data: MenuSectionType }) => {
     );
   };
 
+  const getCurrentSection = () => {
+    const typedMenuData = menuData as MenuData;
+    if (!typedMenuData?.[activeLanguage]) {
+      return null;
+    }
+
+    const section = typedMenuData[activeLanguage][activeSection as SectionType];
+    if (!section || !isWebMobileSection(section)) {
+      return null;
+    }
+
+    return section;
+  };
+
   if (!menuData || !menuData[activeLanguage]) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white">
@@ -268,6 +296,24 @@ export const MenuConfigurationPage = ({ data }: { data: MenuSectionType }) => {
       }}
     >
       {renderContent()}
+      <button
+        onClick={() => setIsAddModalOpen(true)}
+        className="fixed right-8 bottom-8 p-4 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-colors"
+      >
+        <PlusIcon className="w-6 h-6" />
+      </button>
+
+      <AddProviderModal
+        isOpen={isAddModalOpen}
+        onClose={() => setIsAddModalOpen(false)}
+        onAdd={handleAddProvider}
+        availableCategories={
+          getCurrentSection()?.submenu
+            ? Object.keys(getCurrentSection()!.submenu)
+            : []
+        }
+        availableLanguages={languages}
+      />
     </MenuLayout>
   );
 };

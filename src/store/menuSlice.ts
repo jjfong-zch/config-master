@@ -313,6 +313,39 @@ export const menuSlice = createSlice({
         }
       });
     },
+    addProvider: (
+      state,
+      action: PayloadAction<{
+        providerName: string;
+        categories: string[];
+        languages: string[];
+        targetType: "menu" | "submenu";
+      }>
+    ) => {
+      const { providerName, categories, languages, targetType } =
+        action.payload;
+
+      languages.forEach((lang) => {
+        const section = state.data[lang][
+          state.activeSection as SectionType
+        ] as WritableSection;
+
+        if (isWebMobileSection(section)) {
+          if (targetType === "menu") {
+            if (!section.menu.ordering.includes(providerName)) {
+              section.menu.ordering.push(providerName);
+            }
+          } else {
+            categories.forEach((category) => {
+              const submenu = section.submenu[category] as WritableSubMenu;
+              if (submenu && !submenu.ordering.includes(providerName)) {
+                submenu.ordering.push(providerName);
+              }
+            });
+          }
+        }
+      });
+    },
   },
 });
 
@@ -326,6 +359,7 @@ export const {
   toggleHideItem,
   toggleFlag,
   toggleProvider,
+  addProvider,
 } = menuSlice.actions;
 
 export default menuSlice.reducer;
