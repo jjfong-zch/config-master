@@ -2,6 +2,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import * as RadioGroup from "@radix-ui/react-radio-group";
 import { useState } from "react";
 import { Cross2Icon } from "@radix-ui/react-icons";
+import { getCategoryLabel } from "../../constants/categoryMappings";
 
 interface AddProviderModalProps {
   isOpen: boolean;
@@ -26,7 +27,7 @@ export const AddProviderModal = ({
   const [providerName, setProviderName] = useState("");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedLanguages, setSelectedLanguages] = useState<string[]>([]);
-  const [targetType, setTargetType] = useState<"menu" | "submenu">("submenu");
+  const [targetType, setTargetType] = useState<"menu" | "submenu">("menu");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -141,7 +142,7 @@ export const AddProviderModal = ({
                             : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                         }`}
                     >
-                      {category}
+                      {getCategoryLabel(category)}
                     </button>
                   ))}
                 </div>
